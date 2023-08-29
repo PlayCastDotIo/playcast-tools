@@ -1,3 +1,3 @@
 export const send = (message: string): string => {
-  return message;
+  return 'Your message was'.concat(message);
 }
