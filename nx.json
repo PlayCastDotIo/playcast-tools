@@ -1,5 +1,4 @@
 {
-  "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "affected": {
     "defaultBase": "master"
@@ -14,8 +13,29 @@
           "test",
           "e2e"
         ],
-        "accessToken": "MDQyYzZjYzItOWU5Zi00OTZiLWE2N2QtZjBmMTc0YWQyZGI0fHJlYWQtd3JpdGU="
+        "accessToken": "YzgwNjUzMzEtOGQ2YS00NzdiLWI4YTYtY2RjNGExYWVkNTRifHJlYWQtd3JpdGU="
       }
     }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    }
+  },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "production": [
+      "default"
+    ],
+    "sharedGlobals": []
   }
 }
