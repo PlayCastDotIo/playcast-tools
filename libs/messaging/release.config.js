@@ -25,7 +25,9 @@ module.exports = {
           `${srcRoot}/package.json`,
           `${srcRoot}/package-lock.json`,
         ],
-        message: `Release ${name}: ` + '${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+        message:
+          `Release ${name}: ` +
+          '${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
   ],
