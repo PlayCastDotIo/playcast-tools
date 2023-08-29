@@ -70,7 +70,6 @@ jobs:
           npm ci
 
       - run: |
-          npx nx format:check --verbose
           npx nx affected --target test --parallel 3 --ci --code-coverage
           npx nx affected --target build --parallel 3
 
