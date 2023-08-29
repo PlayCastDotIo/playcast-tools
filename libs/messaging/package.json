@@ -1,0 +1,19 @@
+{
+  "name": "@playcastdotio/playcast-messaging",
+  "version": "0.0.0-semantic-release",
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PlayCastDotIo/playcast-tools",
+    "directory": "libs/messaging"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
+

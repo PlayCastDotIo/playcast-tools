@@ -1,0 +1,49 @@
+{
+  "name": "messaging",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/messaging/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/messaging",
+        "main": "libs/messaging/src/index.ts",
+        "tsConfig": "libs/messaging/tsconfig.lib.json",
+        "assets": ["libs/messaging/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs messaging {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/messaging/**/*.ts",
+          "libs/messaging/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/libs/messaging"
+      }
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npx semantic-release-plus --extends ./libs/messaging/release.config.js",
+        "parallel": false
+      }
+    }
+  },
+  "tags": []
+}
