@@ -42,7 +42,7 @@ jobs:
           echo "::set-output name=name::npm"
 
       - name: Set node/npm versions using volta
-        uses: volta-cli/action@1.1.1
+        uses: volta-cli/action@v4.0.1
         with:
           node-version: '${{ matrix.node-version }}'
           npm-version: '${{ matrix.npm-version }}'
