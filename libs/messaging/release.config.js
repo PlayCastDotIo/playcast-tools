@@ -8,7 +8,47 @@ module.exports = {
   tagFormat: name + '-v${version}',
   commitPaths: [`${srcRoot}/*`],
   plugins: [
-    `@semantic-release/commit-analyzer`,
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        preset: 'conventionalcommits',
+        releaseRules: [
+          {
+            type: 'Breaking',
+            release: 'major',
+          },
+          {
+            type: 'breaking',
+            release: 'major',
+          },
+          {
+            type: 'New',
+            release: 'minor',
+          },
+          {
+            type: 'new',
+            release: 'minor',
+          },
+          {
+            subject: 'no-release:',
+            message: 'no-release:',
+            release: false,
+          },
+          {
+            subject: '*',
+            release: 'patch',
+          },
+          {
+            subject: '!no-release:*',
+            message: '!no-release:*',
+            release: 'patch',
+          },
+        ],
+        parserOpts: {
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES'],
+        },
+      },
+    ],
     `@semantic-release/release-notes-generator`,
     [
       `@semantic-release/changelog`,
