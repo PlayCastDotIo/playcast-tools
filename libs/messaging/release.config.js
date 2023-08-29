@@ -1,4 +1,4 @@
-const name = `playcast-tools`;
+const name = `messaging`;
 const srcRoot = `libs/${name}`;
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
     [
       `@semantic-release/changelog`,
       {
-        changelogFile: `CHANGELOG.md`,
+        changelogFile: `${srcRoot}/CHANGELOG.md`,
       },
     ],
     `@semantic-release/npm`,
