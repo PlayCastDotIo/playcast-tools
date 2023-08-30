@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.2...messaging-v1.0.3) (2023-08-30)
+
+
+### Bug Fixes
+
+* **release:** Adjust mouse types to account for WebGL input ([926c8ef](https://github.com/PlayCastDotIo/playcast-tools/commit/926c8efc9f78ffb8077cd6dcf72302f0cd962856))
+
 ## [1.0.2](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.1...messaging-v1.0.2) (2023-08-30)
 
 
