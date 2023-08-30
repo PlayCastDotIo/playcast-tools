@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.1...messaging-v1.0.2) (2023-08-30)
+
+
+### Bug Fixes
+
+* **release:** Added mouse and messaging types ([70db6b1](https://github.com/PlayCastDotIo/playcast-tools/commit/70db6b17395eda43e7e2cc9a3524cde9276ba5ce))
+
 ## [1.0.1](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.0...messaging-v1.0.1) (2023-08-29)
 
 
