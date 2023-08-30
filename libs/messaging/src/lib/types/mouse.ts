@@ -3,12 +3,29 @@ import { PlaycastButton, PlaycastVector } from "./core";
 export type PlaycastMouseOrigin = 'topLeft' | 'bottomLeft' | 'topRight' | 'bottomRight';
 export type PlaycastCursorLockState = 'none' | 'locked' | 'confined' | 'unknown';
 export type PlaycastTargetButton = 'left' | 'middle' | 'right' | 'back' | 'forward';
+export type PlaycastMouseButtonState = {
+  back: PlaycastButton;
+  forward: PlaycastButton;
+  left: PlaycastButton;
+  middle: PlaycastButton;
+  right: PlaycastButton;
+  clickCount: number;
+};
+export type PlaycastCursorState = {
+  lockState: PlaycastCursorLockState;
+}
+
+export type PlaycastMouseInputFromWebGL = {
+  position: PlaycastVector;
+  delta: PlaycastVector;
+  buttons: PlaycastMouseButtonState;
+  scroll: PlaycastVector;
+  cursor: PlaycastCursorState;
+}
 
 export type PlaycastMouseSource = {
   origin: PlaycastMouseOrigin;
-  cursor: {
-    lockState: PlaycastCursorLockState;
-  };
+  cursor: PlaycastCursorState;
   dimensions: PlaycastVector;
 }
 
@@ -18,14 +35,7 @@ export type PlaycastMouseLocation = {
 };
 
 export type PlaycastMouseState = PlaycastMouseLocation & {
-  buttons: {
-      back: PlaycastButton;
-      forward: PlaycastButton;
-      left: PlaycastButton;
-      middle: PlaycastButton;
-      right: PlaycastButton;
-  };
-  clickCount: number;
+  buttons: PlaycastMouseButtonState;
   scroll: PlaycastVector;
 };
 
