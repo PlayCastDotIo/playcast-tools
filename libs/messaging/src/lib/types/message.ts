@@ -1,12 +1,21 @@
-import { PlaycastNameValuePair } from "./core";
-import { PlaycastMessageMouseLocation, PlaycastMessageMouseState } from "./mouse";
-import { PlaycastUser } from "./user";
+import { PlaycastNameValuePair } from './core';
+import {
+  PlaycastMessageMouseDown,
+  PlaycastMessageMouseLocation,
+  PlaycastMessageMouseState,
+  PlaycastMessageMouseUp,
+} from './mouse';
+import { PlaycastUser } from './user';
 
 // Include all possible message sources
 export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
 
 // Union of all possible message types
-export type PlaycastMessageTarget = PlaycastMessageMouseState | PlaycastMessageMouseLocation;
+export type PlaycastMessageTarget =
+  | PlaycastMessageMouseState
+  | PlaycastMessageMouseUp
+  | PlaycastMessageMouseDown
+  | PlaycastMessageMouseLocation;
 
 // Message header (except target and action, which will be added with message)
 export type PlaycastMessageHeader = {
@@ -24,14 +33,16 @@ export type PlaycastMessageHeader = {
 // Target and action are inter-related, so if you have target 'mouse',
 // you must have an action that is valid for 'mouse'. The message in the
 // body must also conform to the appropriate type for the target and action.
-export type PlaycastMessage<T extends PlaycastMessageTarget, R extends PlaycastMessageTarget> = {
+export type PlaycastMessage<
+  T extends PlaycastMessageTarget,
+  R extends PlaycastMessageTarget
+> = {
   signature: string;
-  header: PlaycastMessageHeader &
-      Pick<T, 'target' | 'action'>;
+  header: PlaycastMessageHeader & Pick<T, 'target' | 'action'>;
   body: {
-      message: T['message'];
-      reply: PlaycastMessage<R, R> | Record<string, never>;
-      timings: PlaycastNameValuePair[];
-      stats: PlaycastNameValuePair[];
+    message: T['message'];
+    reply: PlaycastMessage<R, R> | Record<string, never>;
+    timings: PlaycastNameValuePair[];
+    stats: PlaycastNameValuePair[];
   };
 };
