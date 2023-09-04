@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.5...messaging-v1.0.6) (2023-09-04)
+
+
+### Bug Fixes
+
+* **deps:** Add buffer dependency ([4278b4d](https://github.com/PlayCastDotIo/playcast-tools/commit/4278b4d59bdf28d6867677f023eccd6e78f65377))
+
 ## [1.0.5](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.4...messaging-v1.0.5) (2023-09-04)
 
 
