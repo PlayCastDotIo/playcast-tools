@@ -2,6 +2,7 @@ import { PlaycastNameValuePair } from './core';
 import {
   PlaycastMessageMouseDown,
   PlaycastMessageMouseLocation,
+  PlaycastMessageMouseMove,
   PlaycastMessageMouseState,
   PlaycastMessageMouseUp,
 } from './mouse';
@@ -15,6 +16,7 @@ export type PlaycastMessageTarget =
   | PlaycastMessageMouseState
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseDown
+  | PlaycastMessageMouseMove
   | PlaycastMessageMouseLocation;
 
 // Message header (except target and action, which will be added with message)
@@ -46,3 +48,4 @@ export type PlaycastMessage<
     stats: PlaycastNameValuePair[];
   };
 };
+

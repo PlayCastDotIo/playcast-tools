@@ -52,25 +52,31 @@ export type PlaycastMouseUp = PlaycastMouseLocation & {
 // Possible message types include target, action, message typing
 export type PlaycastMessageMouseSource = {
   target: 'mouse';
-  action: 'mouseSource';
+  action: 'source';
   message: PlaycastMouseSource;
 }
 
 export type PlaycastMessageMouseLocation = {
   target: 'mouse';
-  action: 'mouseLocation';
+  action: 'location';
+  message: PlaycastMouseLocation;
+}
+
+export type PlaycastMessageMouseMove = {
+  target: 'mouse';
+  action: 'move';
   message: PlaycastMouseLocation;
 }
 
 export type PlaycastMessageMouseDown = {
   target: 'mouse';
-  action: 'mouseDown';
+  action: 'down';
   message: PlaycastMouseButton;
 }
 
 export type PlaycastMessageMouseUp = {
   target: 'mouse';
-  action: 'mouseUp';
+  action: 'up';
   message: PlaycastMouseButton;
 }
 
