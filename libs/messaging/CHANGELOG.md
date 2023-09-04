@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.3...messaging-v1.0.4) (2023-09-04)
+
+
+### Bug Fixes
+
+* **mouse:** Updated mouse messaging actions, adding move ([c49001c](https://github.com/PlayCastDotIo/playcast-tools/commit/c49001c57e03fb4e34a640352c6a4b85818a06b2))
+
 ## [1.0.3](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.2...messaging-v1.0.3) (2023-08-30)
 
 
