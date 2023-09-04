@@ -3,6 +3,7 @@ import {
   PlaycastMessageMouseDown,
   PlaycastMessageMouseLocation,
   PlaycastMessageMouseMove,
+  PlaycastMessageMouseSource,
   PlaycastMessageMouseState,
   PlaycastMessageMouseUp,
 } from './mouse';
@@ -17,7 +18,8 @@ export type PlaycastMessageTarget =
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseDown
   | PlaycastMessageMouseMove
-  | PlaycastMessageMouseLocation;
+  | PlaycastMessageMouseLocation
+  | PlaycastMessageMouseSource;
 
 // Message header (except target and action, which will be added with message)
 export type PlaycastMessageHeader = {
