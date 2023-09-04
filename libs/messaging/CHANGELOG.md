@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.6...messaging-v1.0.7) (2023-09-04)
+
+
+### Bug Fixes
+
+* **messaging:** Remove use of buffer ([3272934](https://github.com/PlayCastDotIo/playcast-tools/commit/3272934af14af86dc471a858e5851e14b7308f3c))
+
 ## [1.0.6](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.5...messaging-v1.0.6) (2023-09-04)
 
 
