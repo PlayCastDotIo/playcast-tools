@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.7...messaging-v1.0.8) (2023-09-04)
+
+
+### Bug Fixes
+
+* **message:** Add mouse source as accepted message target ([4be69f0](https://github.com/PlayCastDotIo/playcast-tools/commit/4be69f09fc6b29319495430cc32d19f477d860b1))
+
 ## [1.0.7](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.6...messaging-v1.0.7) (2023-09-04)
 
 
