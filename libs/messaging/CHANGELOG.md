@@ -1,3 +1,11 @@
+## [1.0.5](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.4...messaging-v1.0.5) (2023-09-04)
+
+
+### Bug Fixes
+
+* **message:** Add signature functions ([7d0f433](https://github.com/PlayCastDotIo/playcast-tools/commit/7d0f4336e5c74f69d540b52884da891eb72d48fd))
+* **mouse:** Add mouse state to events function ([06969c6](https://github.com/PlayCastDotIo/playcast-tools/commit/06969c66d85f47541442d79124875568285fd3f7))
+
 ## [1.0.4](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.3...messaging-v1.0.4) (2023-09-04)
 
 
