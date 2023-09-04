@@ -7,6 +7,7 @@ import {
   PlaycastMessageMouseUp,
 } from './mouse';
 import { PlaycastUser } from './user';
+import { Buffer } from "buffer";
 
 // Include all possible message sources
 export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
@@ -49,3 +50,17 @@ export type PlaycastMessage<
   };
 };
 
+export const getSignature = (message: string): string => {
+  const encoder = new TextEncoder();
+  const uint8 = encoder.encode(message);
+  const b64 = Buffer.from(
+    uint8.buffer,
+    uint8.byteOffset,
+    uint8.byteLength
+  ).toString("base64");
+  return b64;
+};
+
+export const validateSignature = (message: string, signature: string): boolean => {
+  return signature === getSignature(message);
+};
