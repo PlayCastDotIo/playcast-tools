@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.8...messaging-v1.0.9) (2023-09-05)
+
+
+### Bug Fixes
+
+* **mouse:** source message to "coordinates", add mode message ([5a65f4e](https://github.com/PlayCastDotIo/playcast-tools/commit/5a65f4e0980dc86b9496c18fa497ce3299e1a1df))
+
 ## [1.0.8](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.7...messaging-v1.0.8) (2023-09-04)
 
 
