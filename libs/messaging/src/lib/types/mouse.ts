@@ -62,9 +62,9 @@ export type PlaycastMouseButton = PlaycastMouseLocation & {
   clickCount: number;
 };
 
-export type PlaycastMouseUp = PlaycastMouseLocation & {
-  button: PlaycastTargetButton;
-  clickCount: number;
+export type PlaycastMouseWheel = {
+  position: PlaycastVector;
+  scroll: PlaycastVector;
 };
 
 // Possible message types include target, action, message typing
@@ -104,6 +104,12 @@ export type PlaycastMessageMouseUp = {
   message: PlaycastMouseButton;
 };
 
+export type PlaycastMessageMouseWheel = {
+  target: 'mouse';
+  action: 'wheel';
+  message: PlaycastMouseWheel;
+};
+
 export type PlaycastMessageMouseState = {
   target: 'mouse';
   action: 'state';
@@ -114,7 +120,8 @@ export type PlaycastMouseEvent =
   | PlaycastMessageMouseLocation
   | PlaycastMessageMouseDown
   | PlaycastMessageMouseUp
-  | PlaycastMessageMouseMove;
+  | PlaycastMessageMouseMove
+  | PlaycastMessageMouseWheel;
 
 export const mouseStateToEvents = (
   state: PlaycastMouseState,
@@ -151,6 +158,18 @@ export const mouseStateToEvents = (
     }
   });
 
+  // If there was a scroll event, include it
+  if (state.scroll.x !== 0 || state.scroll.y !== 0) {
+    events.push({
+      target: 'mouse',
+      action: 'wheel',
+      message: {
+        position: { ...state.position },
+        scroll: { ...state.scroll },
+      },
+    });
+  }
+
   // Always include location or move
   events.push({
     target: 'mouse',
@@ -163,4 +182,3 @@ export const mouseStateToEvents = (
 
   return events;
 };
-
