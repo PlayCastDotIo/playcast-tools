@@ -1,9 +1,10 @@
 import { PlaycastNameValuePair } from './core';
 import {
+  PlaycastMessageMouseCoordinates,
   PlaycastMessageMouseDown,
   PlaycastMessageMouseLocation,
+  PlaycastMessageMouseMode,
   PlaycastMessageMouseMove,
-  PlaycastMessageMouseSource,
   PlaycastMessageMouseState,
   PlaycastMessageMouseUp,
 } from './mouse';
@@ -19,7 +20,8 @@ export type PlaycastMessageTarget =
   | PlaycastMessageMouseDown
   | PlaycastMessageMouseMove
   | PlaycastMessageMouseLocation
-  | PlaycastMessageMouseSource;
+  | PlaycastMessageMouseCoordinates
+  | PlaycastMessageMouseMode;
 
 // Message header (except target and action, which will be added with message)
 export type PlaycastMessageHeader = {

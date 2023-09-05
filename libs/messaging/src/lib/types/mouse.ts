@@ -5,6 +5,12 @@ export type PlaycastMouseOrigin =
   | 'bottomLeft'
   | 'topRight'
   | 'bottomRight';
+export type PlaycastMouseMode =
+  | 'none'
+  | 'absolute'
+  | 'relative'
+  | 'move'
+  | 'location';
 export type PlaycastCursorLockState =
   | 'none'
   | 'locked'
@@ -36,9 +42,8 @@ export type PlaycastMouseInputFromWebGL = {
   cursor: PlaycastCursorState;
 };
 
-export type PlaycastMouseSource = {
+export type PlaycastMouseCoordinates = {
   origin: PlaycastMouseOrigin;
-  cursor: PlaycastCursorState;
   dimensions: PlaycastVector;
 };
 
@@ -63,10 +68,16 @@ export type PlaycastMouseUp = PlaycastMouseLocation & {
 };
 
 // Possible message types include target, action, message typing
-export type PlaycastMessageMouseSource = {
+export type PlaycastMessageMouseCoordinates = {
   target: 'mouse';
-  action: 'source';
-  message: PlaycastMouseSource;
+  action: 'coordinates';
+  message: PlaycastMouseCoordinates;
+};
+
+export type PlaycastMessageMouseMode = {
+  target: 'mouse';
+  action: 'mode';
+  message: PlaycastMouseMode;
 };
 
 export type PlaycastMessageMouseLocation = {
