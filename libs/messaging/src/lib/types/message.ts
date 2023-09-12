@@ -30,6 +30,7 @@ export type PlaycastMessageHeader = {
   schemaVersion: 5;
   timestamp: number;
   user: PlaycastUser;
+  isReply: true;
 };
 
 // Intersect with message target so that headers must have
@@ -39,25 +40,25 @@ export type PlaycastMessageHeader = {
 // Target and action are inter-related, so if you have target 'mouse',
 // you must have an action that is valid for 'mouse'. The message in the
 // body must also conform to the appropriate type for the target and action.
-export type PlaycastMessage<
-  T extends PlaycastMessageTarget,
-  R extends PlaycastMessageTarget
-> = {
+export type PlaycastMessage<T extends PlaycastMessageTarget> = {
   signature: string;
   header: PlaycastMessageHeader & Pick<T, 'target' | 'action'>;
   body: {
     message: T['message'];
-    reply: PlaycastMessage<R, R> | Record<string, never>;
     timings: PlaycastNameValuePair[];
     stats: PlaycastNameValuePair[];
+    echo: boolean;
   };
 };
 
 export const getSignature = (message: string): string => {
-  const b64 = btoa(message);;
+  const b64 = btoa(message);
   return b64;
 };
 
-export const validateSignature = (message: string, signature: string): boolean => {
+export const validateSignature = (
+  message: string,
+  signature: string
+): boolean => {
   return signature === getSignature(message);
 };

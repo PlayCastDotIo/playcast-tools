@@ -140,7 +140,7 @@ export const mouseStateToEvents = (
           delta: { ...state.delta },
           button: 'left',
           clickCount: state.buttons.clickCount,
-        },
+        }
       });
     }
 
