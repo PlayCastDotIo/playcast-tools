@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.14...messaging-v1.0.15) (2023-09-12)
+
+
+### Bug Fixes
+
+* **keyboard:** Only send key specific details ([cfd7b3e](https://github.com/PlayCastDotIo/playcast-tools/commit/cfd7b3e72c90b87a9fd6c82e983080e28edbf1c0))
+
 ## [1.0.14](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.13...messaging-v1.0.14) (2023-09-12)
 
 
