@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.9...messaging-v1.0.10) (2023-09-05)
+
+
+### Bug Fixes
+
+* **mouse:** Add mouse wheel message ([373f397](https://github.com/PlayCastDotIo/playcast-tools/commit/373f3971928f28a40c45f0dfd85710e418cc44c3))
+
 ## [1.0.9](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.8...messaging-v1.0.9) (2023-09-05)
 
 
