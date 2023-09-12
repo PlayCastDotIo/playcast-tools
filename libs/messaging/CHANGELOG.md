@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.10...messaging-v1.0.11) (2023-09-12)
+
+
+### Bug Fixes
+
+* **types:** Remove reply from body; add echo to body ([d913ca8](https://github.com/PlayCastDotIo/playcast-tools/commit/d913ca8512deb20abb09f6465b4026288095eecc))
+
 ## [1.0.10](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.9...messaging-v1.0.10) (2023-09-05)
 
 
