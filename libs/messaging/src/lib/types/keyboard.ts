@@ -1,11 +1,13 @@
 import { PlaycastButton } from './core';
 
-// We could make explicit keys
-export type PlaycastKey = PlaycastButton & {
+export type PlaycastKeyDetail = {
   keyCode: string;
   scanCode: number;
   displayName: string;
-};
+}
+
+// We could make explicit keys
+export type PlaycastKey = PlaycastButton & PlaycastKeyDetail;
 
 export type PlaycastKeyboardInputFromWebGL = {
   keys: PlaycastKey[];
@@ -23,13 +25,13 @@ export type PlaycastMessageKeyboardState = {
 export type PlaycastMessageKeyboardDown = {
   target: 'keyboard';
   action: 'down';
-  message: PlaycastKey;
+  message: PlaycastKeyDetail;
 };
 
 export type PlaycastMessageKeyboardUp = {
   target: 'keyboard';
   action: 'up';
-  message: PlaycastKey;
+  message: PlaycastKeyDetail;
 };
 
 export type PlaycastKeyboardEvent =
@@ -49,7 +51,9 @@ export const keyboardStateToEvents = (
           target: 'keyboard',
           action: 'down',
           message: {
-            ...key,
+            keyCode: key.keyCode,
+            scanCode: key.scanCode,
+            displayName: key.displayName,
           },
         });
       }
@@ -59,8 +63,10 @@ export const keyboardStateToEvents = (
           target: 'keyboard',
           action: 'up',
           message: {
-            ...key,
-          },
+            keyCode: key.keyCode,
+            scanCode: key.scanCode,
+            displayName: key.displayName,
+          }
         });
       }
     });
