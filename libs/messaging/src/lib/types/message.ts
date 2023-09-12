@@ -30,7 +30,7 @@ export type PlaycastMessageHeader = {
   schemaVersion: 5;
   timestamp: number;
   user: PlaycastUser;
-  isReply: true;
+  isReply: boolean;
 };
 
 // Intersect with message target so that headers must have
