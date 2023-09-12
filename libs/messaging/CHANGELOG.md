@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.11...messaging-v1.0.12) (2023-09-12)
+
+
+### Bug Fixes
+
+* **types:** isReply should be boolean, not true ([7756a55](https://github.com/PlayCastDotIo/playcast-tools/commit/7756a553bd60b376fbaae6e31b8212821cb066f7))
+
 ## [1.0.11](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.10...messaging-v1.0.11) (2023-09-12)
 
 
