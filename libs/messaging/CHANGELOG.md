@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.12...messaging-v1.0.13) (2023-09-12)
+
+
+### Bug Fixes
+
+* **types:** Add key and keyboard types ([50fb536](https://github.com/PlayCastDotIo/playcast-tools/commit/50fb536264a8aaa1525684b28b271753a0ef0013))
+
 ## [1.0.12](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.11...messaging-v1.0.12) (2023-09-12)
 
 
