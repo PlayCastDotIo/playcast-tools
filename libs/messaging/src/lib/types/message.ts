@@ -1,4 +1,5 @@
 import { PlaycastNameValuePair } from './core';
+import { PlaycastMessageGamepadState } from './gamepad';
 import {
   PlaycastMessageKeyboardDown,
   PlaycastMessageKeyboardState,
@@ -31,7 +32,8 @@ export type PlaycastMessageTarget =
   | PlaycastMessageMouseMode
   | PlaycastMessageKeyboardState
   | PlaycastMessageKeyboardDown
-  | PlaycastMessageKeyboardUp;
+  | PlaycastMessageKeyboardUp
+  | PlaycastMessageGamepadState;
 
 // Message header (except target and action, which will be added with message)
 export type PlaycastMessageHeader = {

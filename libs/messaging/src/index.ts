@@ -1,7 +1,7 @@
 // Types
 export * from './lib/types/core';
 // export * from './lib/types/display';
-// export * from './lib/types/gamepad';
+export * from './lib/types/gamepad';
 export * from './lib/types/keyboard';
 // export * from './lib/types/logs';
 export * from './lib/types/message';
