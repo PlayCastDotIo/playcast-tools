@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.15...messaging-v1.0.16) (2023-09-12)
+
+
+### Bug Fixes
+
+* **messaging:** Including missing message types in PlaycastMessageTarget ([581242f](https://github.com/PlayCastDotIo/playcast-tools/commit/581242f9750c4ae5d626d07054c029929cdc97fb))
+
 ## [1.0.15](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.14...messaging-v1.0.15) (2023-09-12)
 
 
