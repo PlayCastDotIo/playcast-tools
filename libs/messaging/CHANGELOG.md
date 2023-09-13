@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.16...messaging-v1.0.17) (2023-09-13)
+
+
+### Bug Fixes
+
+* **gamepad:** Add messaging and types for gamepads ([88c8bfd](https://github.com/PlayCastDotIo/playcast-tools/commit/88c8bfda2ca0496f342d30152133d6582922d8a2))
+
 ## [1.0.16](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.15...messaging-v1.0.16) (2023-09-12)
 
 
