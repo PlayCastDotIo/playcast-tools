@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.18...messaging-v1.0.19) (2023-09-14)
+
+
+### Bug Fixes
+
+* **stream:** Add stream dimensions message ([7461655](https://github.com/PlayCastDotIo/playcast-tools/commit/7461655ee4d803afae02e9b9c860a5e90f937665))
+
 ## [1.0.18](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.17...messaging-v1.0.18) (2023-09-14)
 
 
