@@ -7,6 +7,7 @@ export * from './lib/types/keyboard';
 export * from './lib/types/message';
 export * from './lib/types/mouse';
 // export * from './lib/types/player';
+export * from './lib/types/stream';
 export * from './lib/types/user';
 
 // Messaging functions
