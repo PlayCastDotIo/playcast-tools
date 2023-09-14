@@ -1,3 +1,11 @@
+## [1.0.18](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.17...messaging-v1.0.18) (2023-09-14)
+
+
+### Bug Fixes
+
+* **keyboard,mouse:** Add WebGL to State conversion functions ([8dd47fc](https://github.com/PlayCastDotIo/playcast-tools/commit/8dd47fcb7c376108d015bd8e30094cdc7a6d54a6))
+* **packages:** Add lodash and types ([b8e70d2](https://github.com/PlayCastDotIo/playcast-tools/commit/b8e70d2910c5faa82c075888c8debbd5c005ca7b))
+
 ## [1.0.17](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.16...messaging-v1.0.17) (2023-09-13)
 
 
