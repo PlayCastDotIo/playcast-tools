@@ -10,6 +10,7 @@
     "@nx/linter": "16.7.4",
     "@nx/vite": "16.7.4",
     "@nx/workspace": "16.7.4",
+    "@types/lodash": "^4.14.198",
     "@types/node": "18.7.1",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
@@ -29,5 +30,8 @@
   },
   "nx": {
     "includedScripts": []
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
