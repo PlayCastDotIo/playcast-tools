@@ -15,6 +15,7 @@ import {
   PlaycastMessageMouseUp,
   PlaycastMessageMouseWheel,
 } from './mouse';
+import { PlaycastMessageStreamDimensions } from './stream';
 import { PlaycastUser } from './user';
 
 // Include all possible message sources
@@ -33,7 +34,8 @@ export type PlaycastMessageTarget =
   | PlaycastMessageKeyboardState
   | PlaycastMessageKeyboardDown
   | PlaycastMessageKeyboardUp
-  | PlaycastMessageGamepadState;
+  | PlaycastMessageGamepadState
+  | PlaycastMessageStreamDimensions;
 
 // Message header (except target and action, which will be added with message)
 export type PlaycastMessageHeader = {
