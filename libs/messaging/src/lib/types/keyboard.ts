@@ -1,10 +1,11 @@
+import { cloneDeep } from 'lodash';
 import { PlaycastButton } from './core';
 
 export type PlaycastKeyDetail = {
   keyCode: string;
   scanCode: number;
   displayName: string;
-}
+};
 
 // We could make explicit keys
 export type PlaycastKey = PlaycastButton & PlaycastKeyDetail;
@@ -38,6 +39,12 @@ export type PlaycastKeyboardEvent =
   | PlaycastMessageKeyboardDown
   | PlaycastMessageKeyboardUp;
 
+export const keyboardWebGlToState = (
+  input: PlaycastKeyboardInputFromWebGL
+): PlaycastKeyboardState => {
+  return cloneDeep(input) as PlaycastKeyboardState;
+};
+
 export const keyboardStateToEvents = (
   state: PlaycastKeyboardState
 ): PlaycastKeyboardEvent[] => {
@@ -66,7 +73,7 @@ export const keyboardStateToEvents = (
             keyCode: key.keyCode,
             scanCode: key.scanCode,
             displayName: key.displayName,
-          }
+          },
         });
       }
     });

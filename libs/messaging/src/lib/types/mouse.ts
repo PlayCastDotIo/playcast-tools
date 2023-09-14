@@ -1,3 +1,4 @@
+import { cloneDeep, pick } from 'lodash';
 import { PlaycastButton, PlaycastVector } from './core';
 
 export type PlaycastMouseOrigin =
@@ -5,23 +6,27 @@ export type PlaycastMouseOrigin =
   | 'bottomLeft'
   | 'topRight'
   | 'bottomRight';
+
 export type PlaycastMouseMode =
   | 'none'
   | 'absolute'
   | 'relative'
   | 'move'
   | 'location';
+
 export type PlaycastCursorLockState =
   | 'none'
   | 'locked'
   | 'confined'
   | 'unknown';
+
 export type PlaycastTargetButton =
   | 'left'
   | 'middle'
   | 'right'
   | 'back'
   | 'forward';
+
 export type PlaycastMouseButtonState = {
   back: PlaycastButton;
   forward: PlaycastButton;
@@ -123,6 +128,14 @@ export type PlaycastMouseEvent =
   | PlaycastMessageMouseMove
   | PlaycastMessageMouseWheel;
 
+export const mouseWebGlToState = (
+  input: PlaycastMouseInputFromWebGL
+): PlaycastMouseState => {
+  return cloneDeep(
+    pick(input, ['position', 'delta', 'buttons', 'scroll'])
+  ) as PlaycastMouseState;
+};
+
 export const mouseStateToEvents = (
   state: PlaycastMouseState,
   useLocation: boolean
@@ -140,7 +153,7 @@ export const mouseStateToEvents = (
           delta: { ...state.delta },
           button: 'left',
           clickCount: state.buttons.clickCount,
-        }
+        },
       });
     }
 
