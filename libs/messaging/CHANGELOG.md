@@ -1,3 +1,10 @@
+## [1.0.22](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.21...messaging-v1.0.22) (2023-09-15)
+
+
+### Bug Fixes
+
+* **gamepad:** Add gamepad xInput message type ([7cc50f3](https://github.com/PlayCastDotIo/playcast-tools/commit/7cc50f321088307cc3f6a60bdc68782eb4e91f5e))
+
 ## [1.0.21](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.20...messaging-v1.0.21) (2023-09-15)
 
 
