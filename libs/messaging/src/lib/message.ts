@@ -67,12 +67,12 @@ export type PlaycastMessage<T extends PlaycastMessageTarget> = {
   };
 };
 
-export const generateHeader = (userId: string, isReply: boolean): PlaycastMessageHeader => {
+export const generateHeader = (source: PlaycastMessageSource, userId: string, isReply: boolean): PlaycastMessageHeader => {
   const stamp = Date.now();
 
   const header: PlaycastMessageHeader = {
       tag: stamp.toString().concat('.', createId()),
-      source: 'player',
+      source: source,
       schemaVersion: 5,
       timestamp: stamp,
       user: {
