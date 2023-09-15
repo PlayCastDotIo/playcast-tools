@@ -1,3 +1,10 @@
+## [1.0.23](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.22...messaging-v1.0.23) (2023-09-15)
+
+
+### Bug Fixes
+
+* **gamepad:** Add xinput message to PlaycastMessageTarget type ([199cd1d](https://github.com/PlayCastDotIo/playcast-tools/commit/199cd1d9a84d6f09edaa5f3980fb838e9546df34))
+
 ## [1.0.22](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.21...messaging-v1.0.22) (2023-09-15)
 
 
