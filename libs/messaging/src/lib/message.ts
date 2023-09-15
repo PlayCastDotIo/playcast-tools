@@ -1,7 +1,7 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { createId } from '@paralleldrive/cuid2';
 import { PlaycastNameValuePair } from './core';
-import { PlaycastMessageGamepadState } from './gamepad';
+import { PlaycastMessageGamepadState, PlaycastMessageGamepadXInput } from './gamepad';
 import {
   PlaycastMessageKeyboardDown,
   PlaycastMessageKeyboardState,
@@ -37,6 +37,7 @@ export type PlaycastMessageTarget =
   | PlaycastMessageKeyboardDown
   | PlaycastMessageKeyboardUp
   | PlaycastMessageGamepadState
+  | PlaycastMessageGamepadXInput
   | PlaycastMessageStreamDimensions;
 
 // Message header (except target and action, which will be added with message)
