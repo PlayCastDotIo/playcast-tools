@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.19...messaging-v1.0.20) (2023-09-15)
+
+
+### Bug Fixes
+
+* Reorganize, add generateHeader method ([50dc8d5](https://github.com/PlayCastDotIo/playcast-tools/commit/50dc8d549cd2e6e515adcd7434851f582d170967))
+
 ## [1.0.19](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.18...messaging-v1.0.19) (2023-09-14)
 
 
