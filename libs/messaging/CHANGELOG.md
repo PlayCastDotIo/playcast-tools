@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.20...messaging-v1.0.21) (2023-09-15)
+
+
+### Bug Fixes
+
+* **message:** Include source in generateHeader args ([b01822e](https://github.com/PlayCastDotIo/playcast-tools/commit/b01822e1ebe9d47bc4ad251a72e9cc1b839882fc))
+
 ## [1.0.20](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.19...messaging-v1.0.20) (2023-09-15)
 
 
