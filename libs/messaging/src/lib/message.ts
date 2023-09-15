@@ -1,3 +1,5 @@
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { createId } from '@paralleldrive/cuid2';
 import { PlaycastNameValuePair } from './core';
 import { PlaycastMessageGamepadState } from './gamepad';
 import {
@@ -63,6 +65,24 @@ export type PlaycastMessage<T extends PlaycastMessageTarget> = {
     stats: PlaycastNameValuePair[];
     echo: boolean;
   };
+};
+
+export const generateHeader = (userId: string, isReply: boolean): PlaycastMessageHeader => {
+  const stamp = Date.now();
+
+  const header: PlaycastMessageHeader = {
+      tag: stamp.toString().concat('.', createId()),
+      source: 'player',
+      schemaVersion: 5,
+      timestamp: stamp,
+      user: {
+          id: userId,
+          auth: 'anonymous',
+      },
+      isReply,
+  };
+
+  return header;
 };
 
 export const getSignature = (message: string): string => {

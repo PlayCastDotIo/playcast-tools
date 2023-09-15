@@ -2,6 +2,7 @@
   "name": "@playcastdotio/playcast-messaging",
   "version": "0.0.0-semantic-release",
   "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
     "lodash": "^4.17.21",
     "tslib": "^2.3.0"
   },
