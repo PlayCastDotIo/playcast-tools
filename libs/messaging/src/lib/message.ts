@@ -15,7 +15,7 @@ import {
   PlaycastMessageMouseSetLocation,
   PlaycastMessageMouseSetMode,
   PlaycastMessageMouseMove,
-  PlaycastMessageMouseState,
+  PlaycastMessageMouseSetState,
   PlaycastMessageMouseUp,
   PlaycastMessageMouseWheel,
 } from './mouse';
@@ -30,7 +30,7 @@ export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
 // Union of all possible message types
 export type PlaycastMessageTarget =
   | PlaycastMessageSystemSetCoordinates
-  | PlaycastMessageMouseState
+  | PlaycastMessageMouseSetState
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseDown
   | PlaycastMessageMouseMove
