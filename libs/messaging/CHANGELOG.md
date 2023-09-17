@@ -1,3 +1,19 @@
+## [1.0.24](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.23...messaging-v1.0.24) (2023-09-17)
+
+
+### Bug Fixes
+
+* Add typedoc support ([27a7937](https://github.com/PlayCastDotIo/playcast-tools/commit/27a79376fc1a82991948d6810fd08e9ac2e80c80))
+* **gamepad:** Update message type names ([8b6e136](https://github.com/PlayCastDotIo/playcast-tools/commit/8b6e136589926c06267725bf321516b822b1a9d8))
+* **hub:** Add hub types ([01c3401](https://github.com/PlayCastDotIo/playcast-tools/commit/01c3401dc5446c4f4eb4b6dbf13d6e1addf4f6c8))
+* **messaging:** Update type for SystemSetCoordinates ([4baa755](https://github.com/PlayCastDotIo/playcast-tools/commit/4baa755781c25c9e2da3f78804219821d9194bfb))
+* **mouse:** Move coordinates to system/setCoordinates ([671d810](https://github.com/PlayCastDotIo/playcast-tools/commit/671d810a9cb351497b169e0c372bbba7b6a63584))
+* **mouse:** update to MouseSetLocation ([6b4a888](https://github.com/PlayCastDotIo/playcast-tools/commit/6b4a888e4745b016283d7bbe9583b5436b1eb88d))
+* **mouse:** update to setMode ([641bca6](https://github.com/PlayCastDotIo/playcast-tools/commit/641bca6bb8669f1a85a26d842b466267241c405d))
+* **stream:** Add prefabs for dimensions ([7d158f1](https://github.com/PlayCastDotIo/playcast-tools/commit/7d158f18f57997bc32637736a58a5bdd41bbfede))
+* **stream:** Update to setDimensions ([37e975a](https://github.com/PlayCastDotIo/playcast-tools/commit/37e975affa46db5499077d5f382659a91f76c826))
+* **typedoc:** Remove typedoc, incompatible peer deps ([95c9a45](https://github.com/PlayCastDotIo/playcast-tools/commit/95c9a45e574cf9a0c6279b508e4ef2b4d97dc20d))
+
 ## [1.0.23](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.22...messaging-v1.0.23) (2023-09-15)
 
 
