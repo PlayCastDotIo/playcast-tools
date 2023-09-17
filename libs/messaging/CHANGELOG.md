@@ -1,3 +1,10 @@
+## [1.0.26](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.25...messaging-v1.0.26) (2023-09-17)
+
+
+### Bug Fixes
+
+* **mouse:** Correct actions for some messages ([2a70c5e](https://github.com/PlayCastDotIo/playcast-tools/commit/2a70c5ef957d08d338d469addf86657f44ac23a3))
+
 ## [1.0.25](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.24...messaging-v1.0.25) (2023-09-17)
 
 
