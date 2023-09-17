@@ -184,6 +184,6 @@ export type PlaycastMessageGamepadSetState = {
 
 export type PlaycastMessageGamepadSetXInput = {
   target: 'gamepad';
-  action: 'setXIinput';
+  action: 'setXInput';
   message: PlaycastGamepadXInput;
 };
