@@ -29,7 +29,7 @@
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e", "typedoc"],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "YzgwNjUzMzEtOGQ2YS00NzdiLWI4YTYtY2RjNGExYWVkNTRifHJlYWQtd3JpdGU="
       }
     }
