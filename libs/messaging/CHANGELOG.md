@@ -1,3 +1,10 @@
+## [1.0.27](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.26...messaging-v1.0.27) (2023-09-17)
+
+
+### Bug Fixes
+
+* More fixes to actions and type names ([0aa4967](https://github.com/PlayCastDotIo/playcast-tools/commit/0aa49676914c81e4bea0d3ec499ee7776fccb495))
+
 ## [1.0.26](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.25...messaging-v1.0.26) (2023-09-17)
 
 
