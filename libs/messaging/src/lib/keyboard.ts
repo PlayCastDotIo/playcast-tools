@@ -17,9 +17,9 @@ export type PlaycastKeyboardInputFromWebGL = {
 // Not currently different, but preparing for the future
 export type PlaycastKeyboardState = PlaycastKeyboardInputFromWebGL;
 
-export type PlaycastMessageKeyboardState = {
+export type PlaycastMessageKeyboardSetState = {
   target: 'keyboard';
-  action: 'state';
+  action: 'setState';
   message: PlaycastKeyboardState;
 };
 

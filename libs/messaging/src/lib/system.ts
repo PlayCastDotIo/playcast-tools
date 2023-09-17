@@ -12,7 +12,7 @@ export type PlaycastSystemCoordinates = {
 };
 
 export type PlaycastMessageSystemSetCoordinates = {
-  target: 'mouse';
-  action: 'coordinates';
+  target: 'system';
+  action: 'setCoordinates';
   message: PlaycastSystemCoordinates;
 };

@@ -7,7 +7,7 @@ import {
 } from './gamepad';
 import {
   PlaycastMessageKeyboardDown,
-  PlaycastMessageKeyboardState,
+  PlaycastMessageKeyboardSetState,
   PlaycastMessageKeyboardUp,
 } from './keyboard';
 import {
@@ -37,7 +37,7 @@ export type PlaycastMessageTarget =
   | PlaycastMessageMouseSetLocation
   | PlaycastMessageMouseWheel
   | PlaycastMessageMouseSetMode
-  | PlaycastMessageKeyboardState
+  | PlaycastMessageKeyboardSetState
   | PlaycastMessageKeyboardDown
   | PlaycastMessageKeyboardUp
   | PlaycastMessageGamepadSetState
