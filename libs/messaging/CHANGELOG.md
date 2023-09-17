@@ -1,3 +1,10 @@
+## [1.0.25](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.24...messaging-v1.0.25) (2023-09-17)
+
+
+### Bug Fixes
+
+* **mouse:** Fix name of PlaycastMessageMouseSetMode ([8fa3a64](https://github.com/PlayCastDotIo/playcast-tools/commit/8fa3a64e8411ecc3cc1855e711f97a3517f73eb1))
+
 ## [1.0.24](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.23...messaging-v1.0.24) (2023-09-17)
 
 
