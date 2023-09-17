@@ -1,3 +1,10 @@
+## [1.0.28](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.27...messaging-v1.0.28) (2023-09-17)
+
+
+### Bug Fixes
+
+* **gamepad:** setXInput instead of setXIinput ([5e16cf3](https://github.com/PlayCastDotIo/playcast-tools/commit/5e16cf3c8952cc47a551134978ae5d676bda9dc7))
+
 ## [1.0.27](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.26...messaging-v1.0.27) (2023-09-17)
 
 
