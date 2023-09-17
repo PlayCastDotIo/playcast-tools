@@ -62,7 +62,7 @@ export type PlaycastMouseWheel = {
 };
 
 // Possible message types include target, action, message typing
-export type PlaycastMessageSetMouseMode = {
+export type PlaycastMessageMouseSetMode = {
   target: 'mouse';
   action: 'mode';
   message: PlaycastMouseMode;
