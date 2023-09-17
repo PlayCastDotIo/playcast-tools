@@ -8,7 +8,6 @@ import {
   PlaycastMessageKeyboardUp,
 } from './keyboard';
 import {
-  PlaycastMessageMouseCoordinates,
   PlaycastMessageMouseDown,
   PlaycastMessageMouseLocation,
   PlaycastMessageMouseMode,
@@ -19,18 +18,19 @@ import {
 } from './mouse';
 import { PlaycastMessageStreamDimensions } from './stream';
 import { PlaycastUser } from './user';
+import { PlaycastMessageSystemSetCoordinates } from './system';
 
 // Include all possible message sources
 export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
 
 // Union of all possible message types
 export type PlaycastMessageTarget =
-  PlaycastMessageMouseState
+    PlaycastMessageSystemSetCoordinates
+  | PlaycastMessageMouseState
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseDown
   | PlaycastMessageMouseMove
   | PlaycastMessageMouseLocation
-  | PlaycastMessageMouseCoordinates
   | PlaycastMessageMouseWheel
   | PlaycastMessageMouseMode
   | PlaycastMessageKeyboardState
