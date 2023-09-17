@@ -9,7 +9,7 @@ import {
 } from './keyboard';
 import {
   PlaycastMessageMouseDown,
-  PlaycastMessageMouseLocation,
+  PlaycastMessageMouseSetLocation,
   PlaycastMessageMouseMode,
   PlaycastMessageMouseMove,
   PlaycastMessageMouseState,
@@ -30,7 +30,7 @@ export type PlaycastMessageTarget =
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseDown
   | PlaycastMessageMouseMove
-  | PlaycastMessageMouseLocation
+  | PlaycastMessageMouseSetLocation
   | PlaycastMessageMouseWheel
   | PlaycastMessageMouseMode
   | PlaycastMessageKeyboardState

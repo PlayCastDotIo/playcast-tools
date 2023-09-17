@@ -68,9 +68,9 @@ export type PlaycastMessageMouseMode = {
   message: PlaycastMouseMode;
 };
 
-export type PlaycastMessageMouseLocation = {
+export type PlaycastMessageMouseSetLocation = {
   target: 'mouse';
-  action: 'location';
+  action: 'setLocation';
   message: PlaycastMouseLocation;
 };
 
@@ -105,7 +105,7 @@ export type PlaycastMessageMouseState = {
 };
 
 export type PlaycastMouseEvent =
-  | PlaycastMessageMouseLocation
+  | PlaycastMessageMouseSetLocation
   | PlaycastMessageMouseDown
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseMove
@@ -169,7 +169,7 @@ export const mouseStateToEvents = (
   // Always include location or move
   events.push({
     target: 'mouse',
-    action: useLocation ? 'location' : 'move',
+    action: useLocation ? 'setLocation' : 'move',
     message: {
       position: { ...state.position },
       delta: { ...state.delta },
