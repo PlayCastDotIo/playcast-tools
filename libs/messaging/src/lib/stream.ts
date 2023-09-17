@@ -6,8 +6,8 @@ export type PlaycastStreamDimensions = {
   aspectRatio: string; // Use CSS aspect ratio syntax, such as '16 / 9' or '1'
 }
 
-export type PlaycastMessageStreamDimensions = {
+export type PlaycastMessageStreamSetDimensions = {
   target: 'stream';
-  action: 'dimensions';
+  action: 'setDimensions';
   message: PlaycastStreamDimensions;
 };

@@ -19,7 +19,7 @@ import {
   PlaycastMessageMouseUp,
   PlaycastMessageMouseWheel,
 } from './mouse';
-import { PlaycastMessageStreamDimensions } from './stream';
+import { PlaycastMessageStreamSetDimensions } from './stream';
 import { PlaycastUser } from './user';
 import { PlaycastMessageSystemSetCoordinates } from './system';
 import { PlaycastMessageHubEcho } from './hub';
@@ -42,7 +42,7 @@ export type PlaycastMessageTarget =
   | PlaycastMessageKeyboardUp
   | PlaycastMessageGamepadState
   | PlaycastMessageGamepadXInput
-  | PlaycastMessageStreamDimensions
+  | PlaycastMessageStreamSetDimensions
   | PlaycastMessageHubEcho;
 
 // Message header (except target and action, which will be added with message)
