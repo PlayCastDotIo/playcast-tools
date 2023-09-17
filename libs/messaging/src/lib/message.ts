@@ -1,7 +1,10 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { createId } from '@paralleldrive/cuid2';
 import { PlaycastNameValuePair } from './core';
-import { PlaycastMessageGamepadState, PlaycastMessageGamepadXInput } from './gamepad';
+import {
+  PlaycastMessageGamepadState,
+  PlaycastMessageGamepadXInput,
+} from './gamepad';
 import {
   PlaycastMessageKeyboardDown,
   PlaycastMessageKeyboardState,
@@ -19,13 +22,14 @@ import {
 import { PlaycastMessageStreamDimensions } from './stream';
 import { PlaycastUser } from './user';
 import { PlaycastMessageSystemSetCoordinates } from './system';
+import { PlaycastMessageHubEcho } from './hub';
 
 // Include all possible message sources
 export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
 
 // Union of all possible message types
 export type PlaycastMessageTarget =
-    PlaycastMessageSystemSetCoordinates
+  | PlaycastMessageSystemSetCoordinates
   | PlaycastMessageMouseState
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseDown
@@ -38,7 +42,8 @@ export type PlaycastMessageTarget =
   | PlaycastMessageKeyboardUp
   | PlaycastMessageGamepadState
   | PlaycastMessageGamepadXInput
-  | PlaycastMessageStreamDimensions;
+  | PlaycastMessageStreamDimensions
+  | PlaycastMessageHubEcho;
 
 // Message header (except target and action, which will be added with message)
 export type PlaycastMessageHeader = {
@@ -68,19 +73,23 @@ export type PlaycastMessage<T extends PlaycastMessageTarget> = {
   };
 };
 
-export const generateHeader = (source: PlaycastMessageSource, userId: string, isReply: boolean): PlaycastMessageHeader => {
+export const generateHeader = (
+  source: PlaycastMessageSource,
+  userId: string,
+  isReply: boolean
+): PlaycastMessageHeader => {
   const stamp = Date.now();
 
   const header: PlaycastMessageHeader = {
-      tag: stamp.toString().concat('.', createId()),
-      source: source,
-      schemaVersion: 5,
-      timestamp: stamp,
-      user: {
-          id: userId,
-          auth: 'anonymous',
-      },
-      isReply,
+    tag: stamp.toString().concat('.', createId()),
+    source: source,
+    schemaVersion: 5,
+    timestamp: stamp,
+    user: {
+      id: userId,
+      auth: 'anonymous',
+    },
+    isReply,
   };
 
   return header;
