@@ -1,5 +1,6 @@
 // Components
 export * from './lib/core';
+export * from './lib/system';
 export * from './lib/gamepad';
 export * from './lib/keyboard';
 export * from './lib/message';

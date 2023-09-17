@@ -1,12 +1,6 @@
 import { cloneDeep, pick } from 'lodash';
 import { PlaycastButton, PlaycastVector } from './core';
 
-export type PlaycastMouseOrigin =
-  | 'topLeft'
-  | 'bottomLeft'
-  | 'topRight'
-  | 'bottomRight';
-
 export type PlaycastMouseMode =
   | 'none'
   | 'absolute'
@@ -47,11 +41,6 @@ export type PlaycastMouseInputFromWebGL = {
   cursor: PlaycastCursorState;
 };
 
-export type PlaycastMouseCoordinates = {
-  origin: PlaycastMouseOrigin;
-  dimensions: PlaycastVector;
-};
-
 export type PlaycastMouseLocation = {
   position: PlaycastVector;
   delta: PlaycastVector;
@@ -73,12 +62,6 @@ export type PlaycastMouseWheel = {
 };
 
 // Possible message types include target, action, message typing
-export type PlaycastMessageMouseCoordinates = {
-  target: 'mouse';
-  action: 'coordinates';
-  message: PlaycastMouseCoordinates;
-};
-
 export type PlaycastMessageMouseMode = {
   target: 'mouse';
   action: 'mode';
