@@ -176,13 +176,13 @@ export const gamepadsStateToXInput = (state: PlaycastGamepadState): PlaycastGame
 }
 
 // Possible message types include target, action, message typing
-export type PlaycastMessageGamepadState = {
+export type PlaycastMessageGamepadSetState = {
   target: 'gamepad';
   action: 'state';
   message: PlaycastGamepadState;
 };
 
-export type PlaycastMessageGamepadXInput = {
+export type PlaycastMessageGamepadSetXInput = {
   target: 'gamepad';
   action: 'xinput';
   message: PlaycastGamepadXInput;

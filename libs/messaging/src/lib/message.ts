@@ -2,8 +2,8 @@
 import { createId } from '@paralleldrive/cuid2';
 import { PlaycastNameValuePair } from './core';
 import {
-  PlaycastMessageGamepadState,
-  PlaycastMessageGamepadXInput,
+  PlaycastMessageGamepadSetState,
+  PlaycastMessageGamepadSetXInput,
 } from './gamepad';
 import {
   PlaycastMessageKeyboardDown,
@@ -40,8 +40,8 @@ export type PlaycastMessageTarget =
   | PlaycastMessageKeyboardState
   | PlaycastMessageKeyboardDown
   | PlaycastMessageKeyboardUp
-  | PlaycastMessageGamepadState
-  | PlaycastMessageGamepadXInput
+  | PlaycastMessageGamepadSetState
+  | PlaycastMessageGamepadSetXInput
   | PlaycastMessageStreamSetDimensions
   | PlaycastMessageHubEcho;
 
