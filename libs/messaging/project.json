@@ -43,6 +43,14 @@
         "command": "npx semantic-release-plus --extends ./libs/messaging/release.config.js",
         "parallel": false
       }
+    },
+    "typedoc": {
+      "executor": "@enio.ai/typedoc:typedoc",
+      "outputs": ["docs/libs/messaging"],
+      "options": {
+        "options": "typedoc.json"
+      },
+      "configurations": {}
     }
   },
   "tags": []

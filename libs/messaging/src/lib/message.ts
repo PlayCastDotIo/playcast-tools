@@ -25,7 +25,7 @@ export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
 
 // Union of all possible message types
 export type PlaycastMessageTarget =
-  | PlaycastMessageMouseState
+  PlaycastMessageMouseState
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseDown
   | PlaycastMessageMouseMove
