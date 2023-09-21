@@ -1,3 +1,10 @@
+## [1.0.29](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.28...messaging-v1.0.29) (2023-09-21)
+
+
+### Bug Fixes
+
+* **system:** comment change, but forces new build because I forgot on the last one ([f600dd4](https://github.com/PlayCastDotIo/playcast-tools/commit/f600dd44918aeb3c6b379ed6bb29a5166b3a6f33))
+
 ## [1.0.28](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.27...messaging-v1.0.28) (2023-09-17)
 
 
