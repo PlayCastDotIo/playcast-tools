@@ -21,7 +21,7 @@ import {
 } from './mouse';
 import { PlaycastMessageStreamSetDimensions } from './stream';
 import { PlaycastUser } from './user';
-import { PlaycastMessageSystemSetCoordinates } from './system';
+import { PlaycastMessageSystemSetPlayerCoordinates } from './system';
 import { PlaycastMessageHubEcho } from './hub';
 
 // Include all possible message sources
@@ -29,7 +29,7 @@ export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
 
 // Union of all possible message types
 export type PlaycastMessageTarget =
-  | PlaycastMessageSystemSetCoordinates
+  | PlaycastMessageSystemSetPlayerCoordinates
   | PlaycastMessageMouseSetState
   | PlaycastMessageMouseUp
   | PlaycastMessageMouseDown
