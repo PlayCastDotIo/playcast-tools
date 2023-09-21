@@ -13,6 +13,6 @@ export type PlaycastSystemPlayerCoordinates = {
 
 export type PlaycastMessageSystemSetPlayerCoordinates = {
   target: 'system';
-  action: 'setCoordinates';
+  action: 'setPlayerCoordinates';
   message: PlaycastSystemPlayerCoordinates;
 };
