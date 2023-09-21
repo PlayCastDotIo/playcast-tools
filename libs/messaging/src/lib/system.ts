@@ -6,13 +6,13 @@ export type PlaycastSystemOrigin =
   | 'topRight'
   | 'bottomRight';
 
-export type PlaycastSystemCoordinates = {
+export type PlaycastSystemPlayerCoordinates = {
   origin: PlaycastSystemOrigin;
   dimensions: PlaycastVector;
 };
 
-export type PlaycastMessageSystemSetCoordinates = {
+export type PlaycastMessageSystemSetPlayerCoordinates = {
   target: 'system';
   action: 'setCoordinates';
-  message: PlaycastSystemCoordinates;
+  message: PlaycastSystemPlayerCoordinates;
 };
