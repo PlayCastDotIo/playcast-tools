@@ -1,4 +1,3 @@
-import { truncate } from 'lodash'
 import { expect, test } from 'vitest'
 import { PlaycastVector, PlaycastButton, PlaycastNameValuePair } from '../lib/core'
 
