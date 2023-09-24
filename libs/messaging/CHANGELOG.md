@@ -1,3 +1,10 @@
+## [1.0.30](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.29...messaging-v1.0.30) (2023-09-21)
+
+
+### Bug Fixes
+
+* **system:** update action for setPlayerCoordinates ([541f259](https://github.com/PlayCastDotIo/playcast-tools/commit/541f259ebb8c1b236473d7e1d5de13319a3a22c2))
+
 ## [1.0.29](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.28...messaging-v1.0.29) (2023-09-21)
 
 
