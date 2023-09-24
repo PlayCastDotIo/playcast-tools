@@ -1,3 +1,10 @@
+## [1.0.32](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.31...messaging-v1.0.32) (2023-09-24)
+
+
+### Bug Fixes
+
+* **types:** Better structure for rolling up types for export ([95e1bfe](https://github.com/PlayCastDotIo/playcast-tools/commit/95e1bfe36deecad4ec2f943d6b0b0ce58e585c27))
+
 ## [1.0.31](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.30...messaging-v1.0.31) (2023-09-24)
 
 
