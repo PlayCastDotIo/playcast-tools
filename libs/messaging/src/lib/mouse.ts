@@ -61,7 +61,16 @@ export type PlaycastMouseWheel = {
   scroll: PlaycastVector;
 };
 
-// Possible message types include target, action, message typing
+export type PlaycastMouseMessages =
+  | PlaycastMessageMouseSetMode
+  | PlaycastMessageMouseSetLocation
+  | PlaycastMessageMouseMove
+  | PlaycastMessageMouseDown
+  | PlaycastMessageMouseUp
+  | PlaycastMessageMouseWheel
+  | PlaycastMessageMouseSetState;
+
+
 export type PlaycastMessageMouseSetMode = {
   target: 'mouse';
   action: 'setMode';

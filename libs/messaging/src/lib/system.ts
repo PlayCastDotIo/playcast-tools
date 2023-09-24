@@ -11,9 +11,47 @@ export type PlaycastSystemPlayerCoordinates = {
   dimensions: PlaycastVector;
 };
 
+export type PlaycastSystemSchema = {
+  key: string;
+  target: string;
+  action: string;
+  message: object;
+  reply: object;
+  isImplemented: boolean;
+};
+
+export type PlaycastSystemMessages =
+  | PlaycastMessageSystemSetPlayerCoordinates
+  | PlaycastMessageSystemGetSchemas
+  | PlaycastMessageSystemGetSchemasReply
+  | PlaycastMessageSystemDie;
+
 export type PlaycastMessageSystemSetPlayerCoordinates = {
   target: 'system';
   action: 'setPlayerCoordinates';
   isReply: false;
   message: PlaycastSystemPlayerCoordinates;
+};
+
+export type PlaycastMessageSystemGetSchemas = {
+  target: 'system';
+  action: 'getSchemas';
+  isReply: false;
+  message: Record<string, never>;
+};
+
+export type PlaycastMessageSystemGetSchemasReply = {
+  target: 'system';
+  action: 'setPlayerCoordinates';
+  isReply: true;
+  message: {
+    schemas: PlaycastSystemSchema[];
+  };
+};
+
+export type PlaycastMessageSystemDie = {
+  target: 'system';
+  action: 'die';
+  isReply: false;
+  message: Record<string, never>;
 };
