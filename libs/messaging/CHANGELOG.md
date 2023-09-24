@@ -1,3 +1,10 @@
+## [1.0.31](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.30...messaging-v1.0.31) (2023-09-24)
+
+
+### Bug Fixes
+
+* **types:** Move isReply out of header and into message structures ([962ae6c](https://github.com/PlayCastDotIo/playcast-tools/commit/962ae6cb5a2aea3e661d65d90fdc7f910156c071))
+
 ## [1.0.30](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.29...messaging-v1.0.30) (2023-09-21)
 
 
