@@ -46,5 +46,6 @@ export const streamPrefabs: PlaycastStreamPrefabs = {
 export type PlaycastMessageStreamSetDimensions = {
   target: 'stream';
   action: 'setDimensions';
+  isReply: false;
   message: PlaycastStreamDimensions;
 };

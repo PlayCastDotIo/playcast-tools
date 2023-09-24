@@ -45,14 +45,13 @@ export type PlaycastMessageTarget =
   | PlaycastMessageStreamSetDimensions
   | PlaycastMessageHubEcho;
 
-// Message header (except target and action, which will be added with message)
+// Message header (except target, action, isReply, which will be added with message)
 export type PlaycastMessageHeader = {
   tag: string;
   source: PlaycastMessageSource;
   schemaVersion: 5;
   timestamp: number;
   user: PlaycastUser;
-  isReply: boolean;
 };
 
 // Intersect with message target so that headers must have
@@ -64,7 +63,7 @@ export type PlaycastMessageHeader = {
 // body must also conform to the appropriate type for the target and action.
 export type PlaycastMessage<T extends PlaycastMessageTarget> = {
   signature: string;
-  header: PlaycastMessageHeader & Pick<T, 'target' | 'action'>;
+  header: PlaycastMessageHeader & Pick<T, 'target' | 'action' | 'isReply'>;
   body: {
     message: T['message'];
     timings: PlaycastNameValuePair[];
@@ -76,7 +75,6 @@ export type PlaycastMessage<T extends PlaycastMessageTarget> = {
 export const generateHeader = (
   source: PlaycastMessageSource,
   userId: string,
-  isReply: boolean
 ): PlaycastMessageHeader => {
   const stamp = Date.now();
 
@@ -89,7 +87,6 @@ export const generateHeader = (
       id: userId,
       auth: 'anonymous',
     },
-    isReply,
   };
 
   return header;

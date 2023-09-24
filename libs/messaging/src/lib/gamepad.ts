@@ -179,11 +179,13 @@ export const gamepadsStateToXInput = (state: PlaycastGamepadState): PlaycastGame
 export type PlaycastMessageGamepadSetState = {
   target: 'gamepad';
   action: 'setState';
+  isReply: false;
   message: PlaycastGamepadState;
 };
 
 export type PlaycastMessageGamepadSetXInput = {
   target: 'gamepad';
   action: 'setXInput';
+  isReply: false;
   message: PlaycastGamepadXInput;
 };

@@ -14,5 +14,6 @@ export type PlaycastSystemPlayerCoordinates = {
 export type PlaycastMessageSystemSetPlayerCoordinates = {
   target: 'system';
   action: 'setPlayerCoordinates';
+  isReply: false;
   message: PlaycastSystemPlayerCoordinates;
 };

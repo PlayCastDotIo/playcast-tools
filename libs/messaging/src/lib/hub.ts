@@ -7,5 +7,6 @@ export type PlaycastHubEcho = {
 export type PlaycastMessageHubEcho = {
   target: 'hub';
   action: 'echo';
+  isReply: false;
   message: PlaycastHubEcho;
 };
