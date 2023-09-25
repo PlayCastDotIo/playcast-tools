@@ -1,4 +1,4 @@
-import { eventNames } from 'process'
+
 import { expect, test } from 'vitest'
 import { PlaycastVector } from '../lib/core'
 import { PlaycastSystemOrigin, PlaycastSystemCoordinates, PlaycastMessageSystemSetCoordinates } from '../lib/system'
