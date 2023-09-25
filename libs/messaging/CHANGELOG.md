@@ -1,3 +1,11 @@
+## [1.0.33](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.32...messaging-v1.0.33) (2023-09-25)
+
+
+### Bug Fixes
+
+* **test:** update dev branch to match into main ([e83bdb6](https://github.com/PlayCastDotIo/playcast-tools/commit/e83bdb619ba5a4db5e831d5c2ffbfb8a0aaa4f1e))
+* **test:** vitest for stream.ts in playcast-tools. ([c0a2c0e](https://github.com/PlayCastDotIo/playcast-tools/commit/c0a2c0ef27874a556127cc52266aaf476921c561))
+
 ## [1.0.32](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.31...messaging-v1.0.32) (2023-09-24)
 
 
