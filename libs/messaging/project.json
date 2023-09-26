@@ -33,7 +33,11 @@
       "outputs": ["{options.reportsDirectory}"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/libs/messaging"
+        "reportsDirectory": "../../coverage/libs/messaging",
+        "reporters": [
+          "junit"
+        ],
+        "outputFile": "../../results/libs/messaging/testResults.xml"
       }
     },
     "release": {
