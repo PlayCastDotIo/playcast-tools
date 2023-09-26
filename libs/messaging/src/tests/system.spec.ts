@@ -1,7 +1,6 @@
-import { eventNames } from 'process'
 import { expect, test } from 'vitest'
 import { PlaycastVector } from '../lib/core'
-import { PlaycastSystemOrigin, PlaycastSystemCoordinates, PlaycastMessageSystemSetCoordinates } from '../lib/system'
+import { PlaycastSystemOrigin } from '../lib/system'
 
 const dimensions: PlaycastVector = {
     x: 2,

@@ -10,10 +10,14 @@ const hubEcho: PlaycastHubEcho = {
 const messageHubEcho: any = {
     target: 'hub',
     action: 'echo',
-    message: hubEcho
+    message: { 
+        target: 'home',
+        action: 'start',
+        enabled: true
+    }
 }
 
-test('hub has correct values', () => {
+test('hub echo has correct form', () => {
     expect(hubEcho).toMatchObject<PlaycastHubEcho>({
       target: expect.any(String),
       action: expect.any(String),
@@ -22,9 +26,15 @@ test('hub has correct values', () => {
 });
 
 test('message hub echo has correct form', () => {
-    const msg = messageHubEcho
-    expect(msg.target).toEqual('hub')
-    expect(msg.action).toEqual('echo')
+    expect(messageHubEcho).toMatchObject<PlaycastMessageHubEcho>({
+        target: expect.any(String),
+        action: expect.any(String),
+        message: {
+            target: expect.any(String),
+            action: expect.any(String),
+            enabled: expect.any(Boolean)
+        }
+    })
 }
 
 )

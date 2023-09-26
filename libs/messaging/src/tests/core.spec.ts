@@ -18,14 +18,14 @@ const nameValuePair: PlaycastNameValuePair = {
     value: 5
 }
 
-test('core has correct vector', () => {
+test('vector has correct form', () => {
     expect(vector).toMatchObject<PlaycastVector>({
       x: expect.any(Number),
       y: expect.any(Number)
     });
 });
 
-test('core has correct button state', () => {
+test('button has correct form', () => {
     expect(button).toMatchObject<PlaycastButton>({
         isPressed: expect.any(Boolean),
         wasPressed: expect.any(Boolean),
@@ -33,7 +33,7 @@ test('core has correct button state', () => {
     });
 });
 
-test('core has correct name and value pair', () => {
+test('name value pair has correct form', () => {
     expect(nameValuePair).toMatchObject<PlaycastNameValuePair>({
         name: expect.any(String),
         value: expect.any(Number)
