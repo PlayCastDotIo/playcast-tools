@@ -140,96 +140,103 @@ const mouseWheel: PlaycastMouseWheel = {
     scroll: { x: 19, y: 26}
 }
 
-const messageMouseSetMode: PlaycastMessageMouseSetMode = { 
+const messageMouseSetMode: PlaycastMessageMouseSetMode = {
     target: 'mouse',
     action: 'setMode',
-    message: 'absolute'
+    message: 'absolute',
+    isReply: false
 }
 
 const messageMouseSetLocation: PlaycastMessageMouseSetLocation = {
     target: 'mouse',
     action: 'setLocation',
-    message: { position: {x: 66, y:2}, delta: {x:22, y:25} }
+    message: { position: { x: 66, y: 2 }, delta: { x: 22, y: 25 } },
+    isReply: false
 }
 
-const messageMouseMove: PlaycastMessageMouseMove = { 
+const messageMouseMove: PlaycastMessageMouseMove = {
     target: 'mouse',
     action: 'move',
-    message: { position: {x: 56, y:21}, delta: {x:22, y:45}, }
+    message: { position: { x: 56, y: 21 }, delta: { x: 22, y: 45 }, },
+    isReply: false
 }
 
 const messageMouseDown: PlaycastMessageMouseDown = {
     target: 'mouse',
     action: 'down',
-    message: {  
+    message: {
         button: 'right',
         clickCount: 22,
-        position: {x: 452, y:245},
-        delta: {x:222, y:215} 
-    }   
+        position: { x: 452, y: 245 },
+        delta: { x: 222, y: 215 }
+    },
+    isReply: false
 }
 
 const messageMouseUp: PlaycastMessageMouseUp = {
     target: 'mouse',
     action: 'up',
-    message: {  
+    message: {
         button: 'left',
         clickCount: 7,
-        position: {x: 26, y:25},
-        delta: {x:76, y:99} 
-    }   
+        position: { x: 26, y: 25 },
+        delta: { x: 76, y: 99 }
+    },
+    isReply: false
 }
 
 const messageMouseWheel: PlaycastMessageMouseWheel = {
     target: 'mouse',
     action: 'wheel',
     message: {
-        position: { x: 23, y: 28}, scroll: { x: 19, y: 26}
-    }
+        position: { x: 23, y: 28 }, scroll: { x: 19, y: 26 }
+    },
+    isReply: false
 }
 
 const messageMouseSetState: PlaycastMessageMouseSetState = {
     target: 'mouse',
     action: 'setState',
     message: {
-        buttons:
-            {  
-                back: {
+        buttons: {
+            back: {
                 isPressed: true,
                 wasPressed: false,
-                wasReleased: true     
-                },
-                forward: {
-                    isPressed: true,
-                    wasPressed: true,
-                    wasReleased: true     
-                },
-                left: {
-                    isPressed: false,
-                    wasPressed: false,
-                    wasReleased: true     
-                },
-                middle: {
-                    isPressed: true,
-                    wasPressed: false,
-                    wasReleased: true     
-                },
-                right: {
-                    isPressed: true,
-                    wasPressed: false,
-                    wasReleased: false     
-                },
-                clickCount: 7
+                wasReleased: true
             },
-        scroll: {x: 345, y:213},
-        position: {x: 6, y:251},
-        delta: {x:12, y:465},
-    }
+            forward: {
+                isPressed: true,
+                wasPressed: true,
+                wasReleased: true
+            },
+            left: {
+                isPressed: false,
+                wasPressed: false,
+                wasReleased: true
+            },
+            middle: {
+                isPressed: true,
+                wasPressed: false,
+                wasReleased: true
+            },
+            right: {
+                isPressed: true,
+                wasPressed: false,
+                wasReleased: false
+            },
+            clickCount: 7
+        },
+        scroll: { x: 345, y: 213 },
+        position: { x: 6, y: 251 },
+        delta: { x: 12, y: 465 },
+    },
+    isReply: false
 }
 
 const mouseEvent: PlaycastMouseEvent = {
     target: 'mouse',
     action: 'up',
+    isReply: false,
     message: {  
         button: 'left',
         clickCount: 7,
@@ -398,7 +405,8 @@ test('message mouse set mode has correct form', () => {
     expect(messageMouseSetMode).toMatchObject<PlaycastMessageMouseSetMode>({
         target: expect.any(String),
         action: expect.any(String),
-        message: expect.any(String)
+        message: expect.any(String),
+        isReply: expect.any(Boolean)
     })
 })
 
@@ -406,6 +414,7 @@ test('message mouse set location has correct form', () => {
     expect(messageMouseSetLocation).toMatchObject<PlaycastMessageMouseSetLocation>({
         target: expect.any(String),
         action: expect.any(String),
+        isReply: expect.any(Boolean),
         message: {
             position: { x: expect.any(Number), y: expect.any(Number)},
             delta: { x: expect.any(Number), y: expect.any(Number)}
@@ -417,6 +426,7 @@ test('message mouse move has correct form', () => {
     expect(messageMouseMove).toMatchObject<PlaycastMessageMouseMove>({
         target: expect.any(String),
         action: expect.any(String),
+        isReply: expect.any(Boolean),
         message: {
             position: { x: expect.any(Number), y: expect.any(Number)},
             delta: { x: expect.any(Number), y: expect.any(Number)}
@@ -428,6 +438,7 @@ test('message mouse down has correct form', () => {
     expect(messageMouseDown).toMatchObject<PlaycastMessageMouseDown>({
         target: expect.any(String),
         action: expect.any(String),
+        isReply: expect.any(Boolean),
         message: {
             button: expect.any(String),
             clickCount: expect.any(Number),
@@ -441,6 +452,7 @@ test('message mouse down has correct form', () => {
     expect(messageMouseUp).toMatchObject<PlaycastMessageMouseUp>({
         target: expect.any(String),
         action: expect.any(String),
+        isReply: expect.any(Boolean),
         message: {
             button: expect.any(String),
             clickCount: expect.any(Number),
@@ -454,6 +466,7 @@ test('message mouse wheel has correct form', () => {
     expect(messageMouseWheel).toMatchObject<PlaycastMessageMouseWheel>({
         target: expect.any(String),
         action: expect.any(String),
+        isReply: expect.any(Boolean),
         message: {
             position: { x: expect.any(Number), y: expect.any(Number)},
             scroll: { x: expect.any(Number), y: expect.any(Number)}
@@ -465,6 +478,7 @@ test('message mouse set state has correct form', () => {
     expect(messageMouseSetState).toMatchObject<PlaycastMessageMouseSetState>({
         target: expect.any(String),
         action: expect.any(String),
+        isReply: expect.any(Boolean),
         message: {
             buttons: {
                 back: {
@@ -505,6 +519,7 @@ test('mouse event has correct form', () => {
     expect(mouseEvent).toMatchObject<PlaycastMouseEvent>({
         target: expect.any(String),
         action: expect.any(String),
+        isReply: expect.any(Boolean),
         message: {
             button: expect.any(String),
             clickCount: expect.any(Number),
