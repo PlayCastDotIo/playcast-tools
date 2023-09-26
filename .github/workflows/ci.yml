@@ -70,7 +70,7 @@ jobs:
           npm ci
 
       - run: |
-          npx nx affected --target test --parallel 3 --ci --code-coverage
+          npx nx affected --target test --parallel 3 --ci --code-coverage --reporter=junit --outputFile testResults.xml
           npx nx affected --target build --parallel 3
 
       - name: Release
