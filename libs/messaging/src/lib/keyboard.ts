@@ -17,21 +17,29 @@ export type PlaycastKeyboardInputFromWebGL = {
 // Not currently different, but preparing for the future
 export type PlaycastKeyboardState = PlaycastKeyboardInputFromWebGL;
 
+export type PlaycastKeyboardMessages =
+  | PlaycastMessageKeyboardSetState
+  | PlaycastMessageKeyboardDown
+  | PlaycastMessageKeyboardUp;
+
 export type PlaycastMessageKeyboardSetState = {
   target: 'keyboard';
   action: 'setState';
+  isReply: false;
   message: PlaycastKeyboardState;
 };
 
 export type PlaycastMessageKeyboardDown = {
   target: 'keyboard';
   action: 'down';
+  isReply: false;
   message: PlaycastKeyDetail;
 };
 
 export type PlaycastMessageKeyboardUp = {
   target: 'keyboard';
   action: 'up';
+  isReply: false;
   message: PlaycastKeyDetail;
 };
 
@@ -57,6 +65,8 @@ export const keyboardStateToEvents = (
         events.push({
           target: 'keyboard',
           action: 'down',
+          isReply: false,
+
           message: {
             keyCode: key.keyCode,
             scanCode: key.scanCode,
@@ -69,6 +79,7 @@ export const keyboardStateToEvents = (
         events.push({
           target: 'keyboard',
           action: 'up',
+          isReply: false,
           message: {
             keyCode: key.keyCode,
             scanCode: key.scanCode,

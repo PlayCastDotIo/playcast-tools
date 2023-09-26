@@ -4,8 +4,12 @@ export type PlaycastHubEcho = {
   enabled: boolean;
 }
 
+export type PlaycastHubMessages =
+  | PlaycastMessageHubEcho;
+
 export type PlaycastMessageHubEcho = {
   target: 'hub';
   action: 'echo';
+  isReply: false;
   message: PlaycastHubEcho;
 };

@@ -61,46 +61,62 @@ export type PlaycastMouseWheel = {
   scroll: PlaycastVector;
 };
 
-// Possible message types include target, action, message typing
+export type PlaycastMouseMessages =
+  | PlaycastMessageMouseSetMode
+  | PlaycastMessageMouseSetLocation
+  | PlaycastMessageMouseMove
+  | PlaycastMessageMouseDown
+  | PlaycastMessageMouseUp
+  | PlaycastMessageMouseWheel
+  | PlaycastMessageMouseSetState;
+
+
 export type PlaycastMessageMouseSetMode = {
   target: 'mouse';
   action: 'setMode';
+  isReply: false;
   message: PlaycastMouseMode;
 };
 
 export type PlaycastMessageMouseSetLocation = {
   target: 'mouse';
   action: 'setLocation';
+  isReply: false;
   message: PlaycastMouseLocation;
 };
 
 export type PlaycastMessageMouseMove = {
   target: 'mouse';
   action: 'move';
+  isReply: false;
   message: PlaycastMouseLocation;
 };
 
 export type PlaycastMessageMouseDown = {
   target: 'mouse';
   action: 'down';
+  isReply: false;
   message: PlaycastMouseButton;
 };
 
 export type PlaycastMessageMouseUp = {
   target: 'mouse';
   action: 'up';
+  isReply: false;
   message: PlaycastMouseButton;
 };
 
 export type PlaycastMessageMouseWheel = {
   target: 'mouse';
   action: 'wheel';
+  isReply: false;
   message: PlaycastMouseWheel;
 };
 
 export type PlaycastMessageMouseSetState = {
   target: 'mouse';
   action: 'setState';
+  isReply: false;
   message: PlaycastMouseState;
 };
 
@@ -131,6 +147,7 @@ export const mouseStateToEvents = (
       events.push({
         target: 'mouse',
         action: 'down',
+        isReply: false,
         message: {
           position: { ...state.position },
           delta: { ...state.delta },
@@ -144,6 +161,7 @@ export const mouseStateToEvents = (
       events.push({
         target: 'mouse',
         action: 'up',
+        isReply: false,
         message: {
           position: { ...state.position },
           delta: { ...state.delta },
@@ -159,6 +177,7 @@ export const mouseStateToEvents = (
     events.push({
       target: 'mouse',
       action: 'wheel',
+      isReply: false,
       message: {
         position: { ...state.position },
         scroll: { ...state.scroll },
@@ -170,6 +189,7 @@ export const mouseStateToEvents = (
   events.push({
     target: 'mouse',
     action: useLocation ? 'setLocation' : 'move',
+    isReply: false,
     message: {
       position: { ...state.position },
       delta: { ...state.delta },

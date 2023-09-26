@@ -1,3 +1,46 @@
+## [1.0.33](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.32...messaging-v1.0.33) (2023-09-25)
+
+
+### Bug Fixes
+
+* **test:** update dev branch to match into main ([e83bdb6](https://github.com/PlayCastDotIo/playcast-tools/commit/e83bdb619ba5a4db5e831d5c2ffbfb8a0aaa4f1e))
+* **test:** vitest for stream.ts in playcast-tools. ([c0a2c0e](https://github.com/PlayCastDotIo/playcast-tools/commit/c0a2c0ef27874a556127cc52266aaf476921c561))
+
+## [1.0.32](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.31...messaging-v1.0.32) (2023-09-24)
+
+
+### Bug Fixes
+
+* **types:** Better structure for rolling up types for export ([95e1bfe](https://github.com/PlayCastDotIo/playcast-tools/commit/95e1bfe36deecad4ec2f943d6b0b0ce58e585c27))
+
+## [1.0.31](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.30...messaging-v1.0.31) (2023-09-24)
+
+
+### Bug Fixes
+
+* **types:** Move isReply out of header and into message structures ([962ae6c](https://github.com/PlayCastDotIo/playcast-tools/commit/962ae6cb5a2aea3e661d65d90fdc7f910156c071))
+
+## [1.0.30](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.29...messaging-v1.0.30) (2023-09-21)
+
+
+### Bug Fixes
+
+* **system:** update action for setPlayerCoordinates ([541f259](https://github.com/PlayCastDotIo/playcast-tools/commit/541f259ebb8c1b236473d7e1d5de13319a3a22c2))
+
+## [1.0.29](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.28...messaging-v1.0.29) (2023-09-21)
+
+
+### Bug Fixes
+
+* **system:** comment change, but forces new build because I forgot on the last one ([f600dd4](https://github.com/PlayCastDotIo/playcast-tools/commit/f600dd44918aeb3c6b379ed6bb29a5166b3a6f33))
+
+## [1.0.28](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.27...messaging-v1.0.28) (2023-09-17)
+
+
+### Bug Fixes
+
+* **gamepad:** setXInput instead of setXIinput ([5e16cf3](https://github.com/PlayCastDotIo/playcast-tools/commit/5e16cf3c8952cc47a551134978ae5d676bda9dc7))
+
 ## [1.0.27](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.26...messaging-v1.0.27) (2023-09-17)
 
 

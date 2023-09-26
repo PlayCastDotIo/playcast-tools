@@ -2,12 +2,12 @@ import { PlaycastButton, PlaycastVector } from './core';
 
 export type PlaycastTrigger = PlaycastButton & {
   value: number;
-}
+};
 
 export type PlaycastStick = {
   stick: PlaycastVector;
   button: PlaycastButton;
-}
+};
 
 export type PlaycastGamepadInputFromWebGL = {
   deviceId: number;
@@ -29,11 +29,11 @@ export type PlaycastGamepadInputFromWebGL = {
   rightTrigger: PlaycastTrigger;
   select: PlaycastButton;
   start: PlaycastButton;
-}
+};
 
 export type PlaycastGamepadsInputFromWebGL = {
   gamepads: PlaycastGamepadInputFromWebGL[];
-}
+};
 
 export type PlaycastGamepad = {
   deviceId: number;
@@ -50,37 +50,39 @@ export type PlaycastGamepad = {
     dpadDown: PlaycastButton;
     dpadLeft: PlaycastButton;
     dpadRight: PlaycastButton;
-  },
+  };
   triggers: {
     left: PlaycastTrigger;
     right: PlaycastTrigger;
-  },
+  };
   sticks: {
     left: PlaycastStick;
     right: PlaycastStick;
-  }
-}
+  };
+};
 
 export type PlaycastGamepadState = {
   gamepads: PlaycastGamepad[];
-}
+};
 
 export type XInput = {
-  wButtons: number,
-  bLeftTrigger: number,
-  bRightTrigger: number,
-  sThumbLX: number,
-  sThumbLY: number,
-  sThumbRX: number,
-  sThumbRY: number,
-}
+  wButtons: number;
+  bLeftTrigger: number;
+  bRightTrigger: number;
+  sThumbLX: number;
+  sThumbLY: number;
+  sThumbRX: number;
+  sThumbRY: number;
+};
 
 export type PlaycastGamepadXInput = {
   deviceId: number;
   xinput: XInput;
-}
+};
 
-export const gamepadsWebGlToState = (input: PlaycastGamepadsInputFromWebGL): PlaycastGamepadState => {
+export const gamepadsWebGlToState = (
+  input: PlaycastGamepadsInputFromWebGL
+): PlaycastGamepadState => {
   return {
     gamepads: input.gamepads.map((gamepad: PlaycastGamepadInputFromWebGL) => {
       return {
@@ -116,7 +118,7 @@ export const gamepadsWebGlToState = (input: PlaycastGamepadsInputFromWebGL): Pla
       };
     }),
   };
-}
+};
 
 const DPAD_UP = 0x0001;
 const DPAD_DOWN = 0x0002;
@@ -135,7 +137,8 @@ const Y = 0x8000;
 
 // Gamepad sticks are -1 to 1, XInput sticks are -32768 to 32767
 // Browser capture of gamepad sticks use y axis inverted from XInput and WebGL
-const toShort = (raw: number, reverse: boolean) => (((reverse ? 0 - raw : raw) + 1) * 32767.5 - 32768) | 0;
+const toShort = (raw: number, reverse: boolean) =>
+  (((reverse ? 0 - raw : raw) + 1) * 32767.5 - 32768) | 0;
 
 // Gamepad triggers are 0 to 1, XInput triggers are 0 to 255
 const toByte = (raw: number) => (raw * 255) | 0;
@@ -155,10 +158,10 @@ const toWord = (gamepad: PlaycastGamepad) =>
   (gamepad.buttons.south.isPressed ? A : 0) |
   (gamepad.buttons.east.isPressed ? B : 0) |
   (gamepad.buttons.west.isPressed ? X : 0) |
-  (gamepad.buttons.north.isPressed ? Y : 0)
-  ;
-
-export const gamepadsStateToXInput = (state: PlaycastGamepadState): PlaycastGamepadXInput[] => {
+  (gamepad.buttons.north.isPressed ? Y : 0);
+export const gamepadsStateToXInput = (
+  state: PlaycastGamepadState
+): PlaycastGamepadXInput[] => {
   return state.gamepads.map((gamepad: PlaycastGamepad) => {
     return {
       deviceId: gamepad.deviceId,
@@ -173,17 +176,22 @@ export const gamepadsStateToXInput = (state: PlaycastGamepadState): PlaycastGame
       },
     };
   });
-}
+};
 
-// Possible message types include target, action, message typing
+export type PlaycastGamepadMessages =
+  | PlaycastMessageGamepadSetState
+  | PlaycastMessageGamepadSetXInput;
+
 export type PlaycastMessageGamepadSetState = {
   target: 'gamepad';
   action: 'setState';
+  isReply: false;
   message: PlaycastGamepadState;
 };
 
 export type PlaycastMessageGamepadSetXInput = {
   target: 'gamepad';
   action: 'setXInput';
+  isReply: false;
   message: PlaycastGamepadXInput;
 };

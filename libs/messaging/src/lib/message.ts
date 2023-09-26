@@ -1,58 +1,33 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { createId } from '@paralleldrive/cuid2';
 import { PlaycastNameValuePair } from './core';
-import {
-  PlaycastMessageGamepadSetState,
-  PlaycastMessageGamepadSetXInput,
-} from './gamepad';
-import {
-  PlaycastMessageKeyboardDown,
-  PlaycastMessageKeyboardSetState,
-  PlaycastMessageKeyboardUp,
-} from './keyboard';
-import {
-  PlaycastMessageMouseDown,
-  PlaycastMessageMouseSetLocation,
-  PlaycastMessageMouseSetMode,
-  PlaycastMessageMouseMove,
-  PlaycastMessageMouseSetState,
-  PlaycastMessageMouseUp,
-  PlaycastMessageMouseWheel,
-} from './mouse';
-import { PlaycastMessageStreamSetDimensions } from './stream';
 import { PlaycastUser } from './user';
-import { PlaycastMessageSystemSetPlayerCoordinates } from './system';
-import { PlaycastMessageHubEcho } from './hub';
+import { PlaycastGamepadMessages } from './gamepad';
+import { PlaycastHubMessages } from './hub';
+import { PlaycastKeyboardMessages } from './keyboard';
+import { PlaycastMouseMessages } from './mouse';
+import { PlaycastStreamMessages } from './stream';
+import { PlaycastSystemMessages } from './system';
 
 // Include all possible message sources
 export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
 
 // Union of all possible message types
 export type PlaycastMessageTarget =
-  | PlaycastMessageSystemSetPlayerCoordinates
-  | PlaycastMessageMouseSetState
-  | PlaycastMessageMouseUp
-  | PlaycastMessageMouseDown
-  | PlaycastMessageMouseMove
-  | PlaycastMessageMouseSetLocation
-  | PlaycastMessageMouseWheel
-  | PlaycastMessageMouseSetMode
-  | PlaycastMessageKeyboardSetState
-  | PlaycastMessageKeyboardDown
-  | PlaycastMessageKeyboardUp
-  | PlaycastMessageGamepadSetState
-  | PlaycastMessageGamepadSetXInput
-  | PlaycastMessageStreamSetDimensions
-  | PlaycastMessageHubEcho;
+  | PlaycastGamepadMessages
+  | PlaycastHubMessages
+  | PlaycastKeyboardMessages
+  | PlaycastMouseMessages
+  | PlaycastStreamMessages
+  | PlaycastSystemMessages;
 
-// Message header (except target and action, which will be added with message)
+// Message header (except target, action, isReply, which will be added with message)
 export type PlaycastMessageHeader = {
   tag: string;
   source: PlaycastMessageSource;
   schemaVersion: 5;
   timestamp: number;
   user: PlaycastUser;
-  isReply: boolean;
 };
 
 // Intersect with message target so that headers must have
@@ -64,7 +39,7 @@ export type PlaycastMessageHeader = {
 // body must also conform to the appropriate type for the target and action.
 export type PlaycastMessage<T extends PlaycastMessageTarget> = {
   signature: string;
-  header: PlaycastMessageHeader & Pick<T, 'target' | 'action'>;
+  header: PlaycastMessageHeader & Pick<T, 'target' | 'action' | 'isReply'>;
   body: {
     message: T['message'];
     timings: PlaycastNameValuePair[];
@@ -75,8 +50,7 @@ export type PlaycastMessage<T extends PlaycastMessageTarget> = {
 
 export const generateHeader = (
   source: PlaycastMessageSource,
-  userId: string,
-  isReply: boolean
+  userId: string
 ): PlaycastMessageHeader => {
   const stamp = Date.now();
 
@@ -89,7 +63,6 @@ export const generateHeader = (
       id: userId,
       auth: 'anonymous',
     },
-    isReply,
   };
 
   return header;
