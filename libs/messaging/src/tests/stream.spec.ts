@@ -12,6 +12,7 @@ const streamSetDimension: PlaycastMessageStreamSetDimensions = {
         }
 }
 
+
 test('stream has correct form', () => {
     expect(streamSetDimension).toMatchObject<PlaycastMessageStreamSetDimensions>({
         target: expect.any(String),
