@@ -73,7 +73,6 @@ export type PlaycastMouseMessages =
   | PlaycastMessageMouseWheel
   | PlaycastMessageMouseSetState;
 
-
 export type PlaycastMessageMouseSetMode = {
   target: 'mouse';
   action: 'setMode';
@@ -131,17 +130,18 @@ export type PlaycastMouseEvent =
   | PlaycastMessageMouseWheel;
 
 export const mouseWebGlToState = (
-  input: PlaycastMouseInputFromWebGL
+  input: PlaycastMouseInputFromWebGL,
+  playerCoordinates: PlaycastSystemPlayerCoordinates
 ): PlaycastMouseState => {
-  return cloneDeep(
-    pick(input, ['position', 'delta', 'buttons', 'scroll'])
-  ) as PlaycastMouseState;
+  return {
+    ...cloneDeep(pick(input, ['position', 'delta', 'buttons', 'scroll'])),
+    playerCoordinates: cloneDeep(playerCoordinates),
+  } as PlaycastMouseState;
 };
 
 export const mouseStateToEvents = (
   state: PlaycastMouseState,
-  useLocation: boolean,
-  playerCoordinates: PlaycastSystemPlayerCoordinates
+  useLocation: boolean
 ): PlaycastMouseEvent[] => {
   const events: PlaycastMouseEvent[] = [];
   (
@@ -153,10 +153,10 @@ export const mouseStateToEvents = (
         action: 'down',
         isReply: false,
         message: {
-          playerCoordinates: { ...playerCoordinates },
+          playerCoordinates: cloneDeep(state.playerCoordinates),
           position: { ...state.position },
           delta: { ...state.delta },
-          button: 'left',
+          button: button,
           clickCount: state.buttons.clickCount,
         },
       });
@@ -168,10 +168,10 @@ export const mouseStateToEvents = (
         action: 'up',
         isReply: false,
         message: {
-          playerCoordinates: { ...playerCoordinates },
+          playerCoordinates: cloneDeep(state.playerCoordinates),
           position: { ...state.position },
           delta: { ...state.delta },
-          button: 'left',
+          button: button,
           clickCount: state.buttons.clickCount,
         },
       });
@@ -185,7 +185,7 @@ export const mouseStateToEvents = (
       action: 'wheel',
       isReply: false,
       message: {
-        playerCoordinates: { ...playerCoordinates },
+        playerCoordinates: cloneDeep(state.playerCoordinates),
         position: { ...state.position },
         scroll: { ...state.scroll },
       },
@@ -198,7 +198,7 @@ export const mouseStateToEvents = (
     action: useLocation ? 'setLocation' : 'move',
     isReply: false,
     message: {
-      playerCoordinates: { ...playerCoordinates },
+      playerCoordinates: cloneDeep(state.playerCoordinates),
       position: { ...state.position },
       delta: { ...state.delta },
     },

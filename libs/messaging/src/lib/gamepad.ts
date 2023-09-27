@@ -1,3 +1,4 @@
+import { cloneDeep } from 'lodash';
 import { PlaycastButton, PlaycastVector } from './core';
 import { PlaycastSystemPlayerCoordinates } from './system';
 
@@ -63,6 +64,7 @@ export type PlaycastGamepad = {
 };
 
 export type PlaycastGamepadState = {
+  playerCoordinates: PlaycastSystemPlayerCoordinates;
   gamepads: PlaycastGamepad[];
 };
 
@@ -83,9 +85,11 @@ export type PlaycastGamepadXInput = {
 };
 
 export const gamepadsWebGlToState = (
-  input: PlaycastGamepadsInputFromWebGL
+  input: PlaycastGamepadsInputFromWebGL,
+  playerCoordinates: PlaycastSystemPlayerCoordinates
 ): PlaycastGamepadState => {
   return {
+    playerCoordinates: playerCoordinates,
     gamepads: input.gamepads.map((gamepad: PlaycastGamepadInputFromWebGL) => {
       return {
         deviceId: gamepad.deviceId,
@@ -161,14 +165,14 @@ const toWord = (gamepad: PlaycastGamepad) =>
   (gamepad.buttons.east.isPressed ? B : 0) |
   (gamepad.buttons.west.isPressed ? X : 0) |
   (gamepad.buttons.north.isPressed ? Y : 0);
+
 export const gamepadsStateToXInput = (
-  state: PlaycastGamepadState,
-  playerCoordinates: PlaycastSystemPlayerCoordinates
+  state: PlaycastGamepadState
 ): PlaycastGamepadXInput[] => {
   return state.gamepads.map((gamepad: PlaycastGamepad) => {
     return {
       deviceId: gamepad.deviceId,
-      playerCoordinates: playerCoordinates,
+      playerCoordinates: cloneDeep(state.playerCoordinates),
       xInput: {
         wButtons: toWord(gamepad),
         bLeftTrigger: toByte(gamepad.triggers.left.value),
