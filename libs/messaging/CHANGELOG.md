@@ -1,3 +1,10 @@
+## [1.0.35](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.34...messaging-v1.0.35) (2023-09-27)
+
+
+### Bug Fixes
+
+* **playerCoordinates:** Move where player coordinates inject into messaging ([a6487d0](https://github.com/PlayCastDotIo/playcast-tools/commit/a6487d0fdb993da683db104794db1d6627589386))
+
 ## [1.0.34](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.33...messaging-v1.0.34) (2023-09-27)
 
 
