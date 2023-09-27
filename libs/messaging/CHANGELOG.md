@@ -1,3 +1,10 @@
+## [1.0.34](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.33...messaging-v1.0.34) (2023-09-27)
+
+
+### Bug Fixes
+
+* **playerCoordinates:** Add coordinates to mouse and gamepad messages ([1e91011](https://github.com/PlayCastDotIo/playcast-tools/commit/1e91011517a4cba56dbfce2932f37428e5f27d1b))
+
 ## [1.0.33](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.32...messaging-v1.0.33) (2023-09-25)
 
 
