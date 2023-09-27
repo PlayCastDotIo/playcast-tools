@@ -192,17 +192,19 @@ export const mouseStateToEvents = (
     });
   }
 
-  // Always include location or move
-  events.push({
-    target: 'mouse',
-    action: useLocation ? 'setLocation' : 'move',
-    isReply: false,
-    message: {
-      playerCoordinates: cloneDeep(state.playerCoordinates),
-      position: { ...state.position },
-      delta: { ...state.delta },
-    },
-  });
+  // Always include location or move if there was a delta
+  if (state.delta.x !== 0 || state.delta.y !== 0) {
+    events.push({
+      target: 'mouse',
+      action: useLocation ? 'setLocation' : 'move',
+      isReply: false,
+      message: {
+        playerCoordinates: cloneDeep(state.playerCoordinates),
+        position: { ...state.position },
+        delta: { ...state.delta },
+      },
+    });
+  }
 
   return events;
 };
