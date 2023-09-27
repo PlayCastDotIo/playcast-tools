@@ -73,6 +73,14 @@ jobs:
           npx nx affected --target test --parallel 3 --ci --code-coverage
           npx nx affected --target build --parallel 3
 
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()                # run this step even if previous step failed
+        with:
+          name: Vite Tests                        # Name of the check run which will be created
+          path: results/libs/*/testResults.xml    # Path to test results
+          reporter: jest-junit                    # Format of test results
+
       - name: Release
         if: ${{ success() && (github.event_name != 'pull_request' || github.event.action == 'closed' && github.event.pull_request.merged == true) }}
         env:
