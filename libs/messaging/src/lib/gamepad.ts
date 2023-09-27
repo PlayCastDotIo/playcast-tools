@@ -1,4 +1,5 @@
 import { PlaycastButton, PlaycastVector } from './core';
+import { PlaycastSystemPlayerCoordinates } from './system';
 
 export type PlaycastTrigger = PlaycastButton & {
   value: number;
@@ -77,7 +78,8 @@ export type XInput = {
 
 export type PlaycastGamepadXInput = {
   deviceId: number;
-  xinput: XInput;
+  playerCoordinates: PlaycastSystemPlayerCoordinates;
+  xInput: XInput;
 };
 
 export const gamepadsWebGlToState = (
@@ -160,12 +162,14 @@ const toWord = (gamepad: PlaycastGamepad) =>
   (gamepad.buttons.west.isPressed ? X : 0) |
   (gamepad.buttons.north.isPressed ? Y : 0);
 export const gamepadsStateToXInput = (
-  state: PlaycastGamepadState
+  state: PlaycastGamepadState,
+  playerCoordinates: PlaycastSystemPlayerCoordinates
 ): PlaycastGamepadXInput[] => {
   return state.gamepads.map((gamepad: PlaycastGamepad) => {
     return {
       deviceId: gamepad.deviceId,
-      xinput: {
+      playerCoordinates: playerCoordinates,
+      xInput: {
         wButtons: toWord(gamepad),
         bLeftTrigger: toByte(gamepad.triggers.left.value),
         bRightTrigger: toByte(gamepad.triggers.right.value),

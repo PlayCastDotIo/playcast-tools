@@ -1,5 +1,6 @@
 import { cloneDeep, pick } from 'lodash';
 import { PlaycastButton, PlaycastVector } from './core';
+import { PlaycastSystemPlayerCoordinates } from './system';
 
 export type PlaycastMouseMode =
   | 'none'
@@ -42,6 +43,7 @@ export type PlaycastMouseInputFromWebGL = {
 };
 
 export type PlaycastMouseLocation = {
+  playerCoordinates: PlaycastSystemPlayerCoordinates;
   position: PlaycastVector;
   delta: PlaycastVector;
 };
@@ -57,6 +59,7 @@ export type PlaycastMouseButton = PlaycastMouseLocation & {
 };
 
 export type PlaycastMouseWheel = {
+  playerCoordinates: PlaycastSystemPlayerCoordinates;
   position: PlaycastVector;
   scroll: PlaycastVector;
 };
@@ -137,7 +140,8 @@ export const mouseWebGlToState = (
 
 export const mouseStateToEvents = (
   state: PlaycastMouseState,
-  useLocation: boolean
+  useLocation: boolean,
+  playerCoordinates: PlaycastSystemPlayerCoordinates
 ): PlaycastMouseEvent[] => {
   const events: PlaycastMouseEvent[] = [];
   (
@@ -149,6 +153,7 @@ export const mouseStateToEvents = (
         action: 'down',
         isReply: false,
         message: {
+          playerCoordinates: { ...playerCoordinates },
           position: { ...state.position },
           delta: { ...state.delta },
           button: 'left',
@@ -163,6 +168,7 @@ export const mouseStateToEvents = (
         action: 'up',
         isReply: false,
         message: {
+          playerCoordinates: { ...playerCoordinates },
           position: { ...state.position },
           delta: { ...state.delta },
           button: 'left',
@@ -179,6 +185,7 @@ export const mouseStateToEvents = (
       action: 'wheel',
       isReply: false,
       message: {
+        playerCoordinates: { ...playerCoordinates },
         position: { ...state.position },
         scroll: { ...state.scroll },
       },
@@ -191,6 +198,7 @@ export const mouseStateToEvents = (
     action: useLocation ? 'setLocation' : 'move',
     isReply: false,
     message: {
+      playerCoordinates: { ...playerCoordinates },
       position: { ...state.position },
       delta: { ...state.delta },
     },
