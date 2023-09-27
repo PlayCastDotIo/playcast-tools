@@ -5,11 +5,12 @@ import { PlaycastStreamDimensions, PlaycastMessageStreamSetDimensions } from '..
 const streamSetDimension: PlaycastMessageStreamSetDimensions = {
     target: 'stream',
     action: 'setDimensions',
-    message: 
-        {   name: 'Jonathan',
-            size: {x:6, y:6},
-            aspectRatio: 'sample' 
-        }
+    message: {
+        name: 'Jonathan',
+        size: { x: 6, y: 6 },
+        aspectRatio: 'sample'
+    },
+    isReply: false
 }
 
 test('stream has correct form', () => {
@@ -20,6 +21,7 @@ test('stream has correct form', () => {
             name: expect.any(String),
             size: { x: expect.any(Number), y: expect.any(Number) },
             aspectRatio: expect.any(String)
-        }
+        },
+        isReply: expect.any(Boolean)
     })
 })
