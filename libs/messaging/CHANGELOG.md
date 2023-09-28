@@ -1,3 +1,10 @@
+## [1.0.36](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.35...messaging-v1.0.36) (2023-09-27)
+
+
+### Bug Fixes
+
+* **mouse:** Only generate mouse move events if delta > 0 ([cce2565](https://github.com/PlayCastDotIo/playcast-tools/commit/cce25659c50aaaa16a33007ec9442385622a4a77))
+
 ## [1.0.35](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.34...messaging-v1.0.35) (2023-09-27)
 
 
