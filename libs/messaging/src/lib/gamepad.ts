@@ -159,8 +159,8 @@ const toWord = (gamepad: PlaycastGamepad) =>
   (gamepad.buttons.select.isPressed ? BACK : 0) |
   (gamepad.sticks.left.button.isPressed ? LEFT_THUMB : 0) |
   (gamepad.sticks.right.button.isPressed ? RIGHT_THUMB : 0) |
-  (gamepad.buttons.leftShoulder ? LEFT_SHOULDER : 0) |
-  (gamepad.buttons.rightShoulder ? RIGHT_SHOULDER : 0) |
+  (gamepad.buttons.leftShoulder.isPressed ? LEFT_SHOULDER : 0) |
+  (gamepad.buttons.rightShoulder.isPressed ? RIGHT_SHOULDER : 0) |
   (gamepad.buttons.south.isPressed ? A : 0) |
   (gamepad.buttons.east.isPressed ? B : 0) |
   (gamepad.buttons.west.isPressed ? X : 0) |
