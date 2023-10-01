@@ -1,3 +1,10 @@
+## [1.0.37](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.36...messaging-v1.0.37) (2023-09-28)
+
+
+### Bug Fixes
+
+* **keyboard:** Produce better key events with W3C codes ([9618014](https://github.com/PlayCastDotIo/playcast-tools/commit/96180142aa31b2f9e75a601855e441634878801d))
+
 ## [1.0.36](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.35...messaging-v1.0.36) (2023-09-27)
 
 
