@@ -1,3 +1,17 @@
+## [1.0.40](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.39...messaging-v1.0.40) (2023-10-02)
+
+
+### Bug Fixes
+
+* **test:** update vitest in main [#686](https://github.com/PlayCastDotIo/playcast-tools/issues/686) ([bea7144](https://github.com/PlayCastDotIo/playcast-tools/commit/bea714447e0fe97d4bf95edfb8da7eb8e84b63d6))
+
+## [1.0.39](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.38...messaging-v1.0.39) (2023-10-01)
+
+
+### Bug Fixes
+
+* **test:** Add start of test script for gamepad - toWord ([eebfd84](https://github.com/PlayCastDotIo/playcast-tools/commit/eebfd84370ec1e35cba4171fa5e781f563fa0bc1))
+
 ## [1.0.38](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.37...messaging-v1.0.38) (2023-10-01)
 
 
