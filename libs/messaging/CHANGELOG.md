@@ -1,3 +1,17 @@
+## [1.0.39](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.38...messaging-v1.0.39) (2023-10-01)
+
+
+### Bug Fixes
+
+* **test:** Add start of test script for gamepad - toWord ([eebfd84](https://github.com/PlayCastDotIo/playcast-tools/commit/eebfd84370ec1e35cba4171fa5e781f563fa0bc1))
+
+## [1.0.38](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.37...messaging-v1.0.38) (2023-10-01)
+
+
+### Bug Fixes
+
+* **gamepad:** Fix shoulder button toggle evalutation ([f657f50](https://github.com/PlayCastDotIo/playcast-tools/commit/f657f500e73b453b5138ff2f4033fe397be0c5f0))
+
 ## [1.0.37](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.36...messaging-v1.0.37) (2023-09-28)
 
 

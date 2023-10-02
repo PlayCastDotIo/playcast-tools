@@ -143,14 +143,14 @@ const Y = 0x8000;
 
 // Gamepad sticks are -1 to 1, XInput sticks are -32768 to 32767
 // Browser capture of gamepad sticks use y axis inverted from XInput and WebGL
-const toShort = (raw: number, reverse: boolean) =>
+export const toShort = (raw: number, reverse: boolean) =>
   (((reverse ? 0 - raw : raw) + 1) * 32767.5 - 32768) | 0;
 
 // Gamepad triggers are 0 to 1, XInput triggers are 0 to 255
-const toByte = (raw: number) => (raw * 255) | 0;
+export const toByte = (raw: number) => (raw * 255) | 0;
 
 // Gamepad buttons are booleans, XInput buttons are a bitmask
-const toWord = (gamepad: PlaycastGamepad) =>
+export const toWord = (gamepad: PlaycastGamepad) =>
   (gamepad.buttons.dpadUp.isPressed ? DPAD_UP : 0) |
   (gamepad.buttons.dpadDown.isPressed ? DPAD_DOWN : 0) |
   (gamepad.buttons.dpadLeft.isPressed ? DPAD_LEFT : 0) |
@@ -159,8 +159,8 @@ const toWord = (gamepad: PlaycastGamepad) =>
   (gamepad.buttons.select.isPressed ? BACK : 0) |
   (gamepad.sticks.left.button.isPressed ? LEFT_THUMB : 0) |
   (gamepad.sticks.right.button.isPressed ? RIGHT_THUMB : 0) |
-  (gamepad.buttons.leftShoulder ? LEFT_SHOULDER : 0) |
-  (gamepad.buttons.rightShoulder ? RIGHT_SHOULDER : 0) |
+  (gamepad.buttons.leftShoulder.isPressed ? LEFT_SHOULDER : 0) |
+  (gamepad.buttons.rightShoulder.isPressed ? RIGHT_SHOULDER : 0) |
   (gamepad.buttons.south.isPressed ? A : 0) |
   (gamepad.buttons.east.isPressed ? B : 0) |
   (gamepad.buttons.west.isPressed ? X : 0) |
