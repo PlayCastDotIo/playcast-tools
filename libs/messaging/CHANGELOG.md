@@ -1,3 +1,10 @@
+## [1.0.41](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.40...messaging-v1.0.41) (2023-10-02)
+
+
+### Bug Fixes
+
+* **gamepad:** Add messages, types to support initialize, remove, and tracking ([d44ae3f](https://github.com/PlayCastDotIo/playcast-tools/commit/d44ae3fc3b8efc36eb696271f1f0aeb9088a72f2))
+
 ## [1.0.40](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.39...messaging-v1.0.40) (2023-10-02)
 
 
