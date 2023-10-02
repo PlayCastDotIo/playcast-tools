@@ -68,6 +68,19 @@ export type PlaycastGamepadState = {
   gamepads: PlaycastGamepad[];
 };
 
+export type PlaycastGamepadId = -1 | 0 | 1 | 2 | 3; // -1 means unassigned
+
+// These are used by the host
+export type PlaycastPlayerDeviceGamepad = {
+  playerId: string;
+  deviceId: number;
+  gamepadId: PlaycastGamepadId;
+  isNew: boolean;
+};
+
+export type PlaycastPlayerDeviceGamepadMap = PlaycastPlayerDeviceGamepad[];
+// End of host types
+
 export type XInput = {
   wButtons: number;
   bLeftTrigger: number;
@@ -79,7 +92,7 @@ export type XInput = {
 };
 
 export type PlaycastGamepadXInput = {
-  deviceId: number;
+  gamepadId: -1 | 0 | 1 | 2 | 3; // -1 means unassigned
   playerCoordinates: PlaycastSystemPlayerCoordinates;
   xInput: XInput;
 };
@@ -167,11 +180,17 @@ export const toWord = (gamepad: PlaycastGamepad) =>
   (gamepad.buttons.north.isPressed ? Y : 0);
 
 export const gamepadsStateToXInput = (
-  state: PlaycastGamepadState
+  state: PlaycastGamepadState,
+  map: PlaycastPlayerDeviceGamepadMap
 ): PlaycastGamepadXInput[] => {
   return state.gamepads.map((gamepad: PlaycastGamepad) => {
+    // map is an array that's already filtered to this player
+    // We will return -1 if we didn't find a mapping, but the host shouldn't
+    // let that happen.
+    const gamepadId =
+      map.find((m) => m.deviceId === gamepad.deviceId)?.gamepadId ?? -1;
     return {
-      deviceId: gamepad.deviceId,
+      gamepadId: gamepadId,
       playerCoordinates: cloneDeep(state.playerCoordinates),
       xInput: {
         wButtons: toWord(gamepad),
@@ -188,7 +207,23 @@ export const gamepadsStateToXInput = (
 
 export type PlaycastGamepadMessages =
   | PlaycastMessageGamepadSetState
-  | PlaycastMessageGamepadSetXInput;
+  | PlaycastMessageGamepadSetXInput
+  | PlaycastMessageGamepadInitialize
+  | PlaycastMessageGamepadRemove;
+
+export type PlaycastMessageGamepadInitialize = {
+  target: 'gamepad';
+  action: 'initialize';
+  isReply: false;
+  message: { gamepadId: PlaycastGamepadId };
+};
+
+export type PlaycastMessageGamepadRemove = {
+  target: 'gamepad';
+  action: 'remove';
+  isReply: false;
+  message: { gamepadId: PlaycastGamepadId };
+};
 
 export type PlaycastMessageGamepadSetState = {
   target: 'gamepad';
