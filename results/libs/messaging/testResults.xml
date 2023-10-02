@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="51" failures="0" errors="0" time="1.617">
+    <testsuite name="src/tests/core.spec.ts" timestamp="2023-09-29T18:58:30.508Z" hostname="LAPTOP-SH56CJQT" tests="3" failures="0" errors="0" skipped="0" time="0.011">
+        <testcase classname="src/tests/core.spec.ts" name="core has correct vector" time="0.005">
+        </testcase>
+        <testcase classname="src/tests/core.spec.ts" name="core has correct button state" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/core.spec.ts" name="core has correct name and value pair" time="0.001">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/tests/gamepad.spec.ts" timestamp="2023-09-29T18:58:30.512Z" hostname="LAPTOP-SH56CJQT" tests="11" failures="0" errors="0" skipped="0" time="0.027">
+        <testcase classname="src/tests/gamepad.spec.ts" name="trigger has correct form" time="0.006">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="stick has correct form" time="0.002">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="gamepad input from WebGL has correct form" time="0.002">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="game pads input from WebGL has correct form" time="0.002">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="game pad has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="gamepad state has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="x input has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="gamepad x input has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="message gamepad set state has correct form" time="0.003">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="message gamepad set x input has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="gamepad messages has correct sample form" time="0">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/tests/hub.spec.ts" timestamp="2023-09-29T18:58:30.516Z" hostname="LAPTOP-SH56CJQT" tests="2" failures="0" errors="0" skipped="0" time="0.01">
+        <testcase classname="src/tests/hub.spec.ts" name="hub echo has correct form" time="0.005">
+        </testcase>
+        <testcase classname="src/tests/hub.spec.ts" name="message hub echo has correct form" time="0.001">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/tests/keyboard.spec.ts" timestamp="2023-09-29T18:58:30.517Z" hostname="LAPTOP-SH56CJQT" tests="8" failures="0" errors="0" skipped="0" time="0.015">
+        <testcase classname="src/tests/keyboard.spec.ts" name="key detail has correct form" time="0.005">
+        </testcase>
+        <testcase classname="src/tests/keyboard.spec.ts" name="cast key has correct form" time="0.002">
+        </testcase>
+        <testcase classname="src/tests/keyboard.spec.ts" name="keyboard state has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/keyboard.spec.ts" name="keyboard message has correct sample form" time="0">
+        </testcase>
+        <testcase classname="src/tests/keyboard.spec.ts" name="message keyboard set state has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/keyboard.spec.ts" name="message keyboard down has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/keyboard.spec.ts" name="message keyboard up has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/keyboard.spec.ts" name="keyboard event has correct form" time="0">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/tests/message.spec.ts" timestamp="2023-09-29T18:58:30.520Z" hostname="LAPTOP-SH56CJQT" tests="4" failures="0" errors="0" skipped="0" time="0.02">
+        <testcase classname="src/tests/message.spec.ts" name="message source has correct form" time="0.003">
+        </testcase>
+        <testcase classname="src/tests/message.spec.ts" name="message target has correct sample form" time="0.004">
+        </testcase>
+        <testcase classname="src/tests/message.spec.ts" name="message header has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/message.spec.ts" name="message has correct sample form" time="0.005">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/tests/mouse.spec.ts" timestamp="2023-09-29T18:58:30.522Z" hostname="LAPTOP-SH56CJQT" tests="18" failures="0" errors="0" skipped="0" time="0.017">
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse mode has correct form" time="0.002">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="cursor lock state has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="target button has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse button state has correct form" time="0.002">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="cursor state has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse input from webGL has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse location has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse state has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse button has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse wheel has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="message mouse set mode has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="message mouse set location has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="message mouse move has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="message mouse down has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="message mouse down has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="message mouse wheel has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="message mouse set state has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse event has correct form" time="0">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/tests/stream.spec.ts" timestamp="2023-09-29T18:58:30.532Z" hostname="LAPTOP-SH56CJQT" tests="1" failures="0" errors="0" skipped="0" time="0.013">
+        <testcase classname="src/tests/stream.spec.ts" name="stream has correct form" time="0.007">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/tests/system.spec.ts" timestamp="2023-09-29T18:58:30.533Z" hostname="LAPTOP-SH56CJQT" tests="3" failures="0" errors="0" skipped="0" time="0.013">
+        <testcase classname="src/tests/system.spec.ts" name="has correct system origin" time="0.004">
+        </testcase>
+        <testcase classname="src/tests/system.spec.ts" name="has correct coordinates" time="0.003">
+        </testcase>
+        <testcase classname="src/tests/system.spec.ts" name="has correct message for system set coordinates" time="0.001">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/tests/user.spec.ts" timestamp="2023-09-29T18:58:30.533Z" hostname="LAPTOP-SH56CJQT" tests="1" failures="0" errors="0" skipped="0" time="0.01">
+        <testcase classname="src/tests/user.spec.ts" name="user has correct form" time="0.005">
+        </testcase>
+    </testsuite>
+</testsuites>
