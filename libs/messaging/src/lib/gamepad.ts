@@ -70,16 +70,17 @@ export type PlaycastGamepadState = {
 
 export type PlaycastGamepadId = -1 | 0 | 1 | 2 | 3; // -1 means unassigned
 
-// These are used by the host
-export type PlaycastPlayerDeviceGamepad = {
-  playerId: string;
-  deviceId: number;
-  gamepadId: PlaycastGamepadId;
-  isNew: boolean;
+export type PlaycastPlayerDevice = {
+    playerId: string;
+    deviceId: number;
+};
+
+export type PlaycastPlayerDeviceGamepad = PlaycastPlayerDevice & {
+    gamepadId: PlaycastGamepadId;
+    isNew: boolean;
 };
 
 export type PlaycastPlayerDeviceGamepadMap = PlaycastPlayerDeviceGamepad[];
-// End of host types
 
 export type XInput = {
   wButtons: number;
