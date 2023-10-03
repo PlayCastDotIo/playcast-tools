@@ -1,4 +1,5 @@
 // Imported components
+export * from './lib/camera';
 export * from './lib/core';
 export * from './lib/gamepad';
 export * from './lib/hub';
