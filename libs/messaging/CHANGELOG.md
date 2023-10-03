@@ -1,3 +1,10 @@
+## [1.0.43](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.42...messaging-v1.0.43) (2023-10-03)
+
+
+### Bug Fixes
+
+* **camera:** Add the rest of the camera resolution message properties ([58998ec](https://github.com/PlayCastDotIo/playcast-tools/commit/58998ec98784008615c28da60a188878b607e72f))
+
 ## [1.0.42](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.41...messaging-v1.0.42) (2023-10-03)
 
 
