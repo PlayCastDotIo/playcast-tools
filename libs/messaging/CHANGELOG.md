@@ -1,3 +1,10 @@
+## [1.0.44](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.43...messaging-v1.0.44) (2023-10-03)
+
+
+### Bug Fixes
+
+* **system:** Correct action for GetSchemas reply ([dde58af](https://github.com/PlayCastDotIo/playcast-tools/commit/dde58af3e7ea17f348d9a9a1732ababe4ef695fa))
+
 ## [1.0.43](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.42...messaging-v1.0.43) (2023-10-03)
 
 
