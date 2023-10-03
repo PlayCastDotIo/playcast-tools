@@ -7,8 +7,12 @@ export type PlaycastMessageCameraSetResolution = {
   action: 'setResolution';
   isReply: false;
   message: {
+    cameraId: number;
+    fps: number;
     playerHeight: number;
     playerWidth: number;
+    name: string;
+    aspectRatio: number;
   };
 };
 
