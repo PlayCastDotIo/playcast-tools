@@ -34,7 +34,7 @@ export type PlaycastMessageSystemGetSchemas = {
 
 export type PlaycastMessageSystemGetSchemasReply = {
   target: 'system';
-  action: 'setPlayerCoordinates';
+  action: 'getSchemas';
   isReply: true;
   message: {
     schemas: PlaycastSystemSchema[];
