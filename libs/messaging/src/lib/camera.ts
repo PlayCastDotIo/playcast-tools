@@ -1,4 +1,6 @@
-export type PlaycastCameraMessages = PlaycastMessageCameraSetResolution;
+export type PlaycastCameraMessages =
+  | PlaycastMessageCameraSetResolution
+  | PlaycastMessageCameraSetResolutionReply;
 
 export type PlaycastMessageCameraSetResolution = {
   target: 'camera';
