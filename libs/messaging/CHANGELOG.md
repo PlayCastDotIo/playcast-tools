@@ -1,3 +1,13 @@
+## [1.0.42](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.41...messaging-v1.0.42) (2023-10-03)
+
+
+### Bug Fixes
+
+* **camera:** Include reply in camera messages list ([5a0780e](https://github.com/PlayCastDotIo/playcast-tools/commit/5a0780e4074a42b25c41d6694ea0908597460da6))
+* **camera:** Possibly correct message types for camera ([b7e497c](https://github.com/PlayCastDotIo/playcast-tools/commit/b7e497c91be37c212e6e5426cb6723d360f03a8d))
+* **gamepad:** Add types shared with host app ([ce57cc3](https://github.com/PlayCastDotIo/playcast-tools/commit/ce57cc3bc7c9d517c3f31512c419fd0e80f0e61c))
+* **system:** Remove deprecated SetPlayerCoordinates message ([671517b](https://github.com/PlayCastDotIo/playcast-tools/commit/671517b12465b4f1851438964793a35e52fadd85))
+
 ## [1.0.41](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.40...messaging-v1.0.41) (2023-10-02)
 
 
