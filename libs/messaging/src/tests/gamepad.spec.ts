@@ -518,7 +518,7 @@ const xInput: XInput = {
 }
 
 const gamepadXInput: PlaycastGamepadXInput = {
-    deviceId: 5,
+    gamepadId: 0,
     playerCoordinates: {
         origin: 'topLeft',
         dimensions: {
@@ -654,7 +654,7 @@ const messageGamepadSetXInput: PlaycastMessageGamepadSetXInput = {
     action: 'setXInput',
     isReply: false,
     message: {
-        deviceId: 5,
+        gamepadId: 2,
         playerCoordinates: {
             origin: 'topLeft',
             dimensions: {
@@ -679,7 +679,7 @@ const gamepadMessages: PlaycastGamepadMessages = {
     action: 'setXInput',
     isReply: false,
     message: {
-        deviceId: 5,
+        gamepadId: 0,
         playerCoordinates: {
             origin: 'topLeft',
             dimensions: {
@@ -1124,7 +1124,7 @@ test('x input has correct form', () => {
 
 test('gamepad x input has correct form', () => {
     expect(gamepadXInput).toMatchObject<PlaycastGamepadXInput>({
-        deviceId: expect.any(Number),
+        gamepadId: expect.any(Number),
         playerCoordinates: {
             origin: expect.any(String),
             dimensions: {
@@ -1264,7 +1264,7 @@ test('message gamepad set x input has correct form', () => {
         action: expect.any(String),
         isReply: expect.any(Boolean),
         message: {
-            deviceId: expect.any(Number),
+            gamepadId: expect.any(Number),
             playerCoordinates: {
                 origin: expect.any(String),
                 dimensions: {
@@ -1291,7 +1291,7 @@ test('gamepad messages has correct sample form', () => {
         action: expect.any(String),
         isReply: expect.any(Boolean),
         message: {
-            deviceId: expect.any(Number),
+            gamepadId: expect.any(Number),
             playerCoordinates: {
                 origin: expect.any(String),
                 dimensions: {
