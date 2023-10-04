@@ -518,7 +518,7 @@ const xInput: XInput = {
 }
 
 const gamepadXInput: PlaycastGamepadXInput = {
-    deviceId: 5,
+    gamepadId: 0,
     playerCoordinates: {
         origin: 'topLeft',
         dimensions: {
@@ -654,7 +654,7 @@ const messageGamepadSetXInput: PlaycastMessageGamepadSetXInput = {
     action: 'setXInput',
     isReply: false,
     message: {
-        deviceId: 5,
+        gamepadId: 2,
         playerCoordinates: {
             origin: 'topLeft',
             dimensions: {
@@ -679,7 +679,7 @@ const gamepadMessages: PlaycastGamepadMessages = {
     action: 'setXInput',
     isReply: false,
     message: {
-        deviceId: 5,
+        gamepadId: 0,
         playerCoordinates: {
             origin: 'topLeft',
             dimensions: {
@@ -1124,7 +1124,7 @@ test('x input has correct form', () => {
 
 test('gamepad x input has correct form', () => {
     expect(gamepadXInput).toMatchObject<PlaycastGamepadXInput>({
-        deviceId: expect.any(Number),
+        gamepadId: expect.any(Number),
         playerCoordinates: {
             origin: expect.any(String),
             dimensions: {
@@ -1264,7 +1264,7 @@ test('message gamepad set x input has correct form', () => {
         action: expect.any(String),
         isReply: expect.any(Boolean),
         message: {
-            deviceId: expect.any(Number),
+            gamepadId: expect.any(Number),
             playerCoordinates: {
                 origin: expect.any(String),
                 dimensions: {
@@ -1291,7 +1291,7 @@ test('gamepad messages has correct sample form', () => {
         action: expect.any(String),
         isReply: expect.any(Boolean),
         message: {
-            deviceId: expect.any(Number),
+            gamepadId: expect.any(Number),
             playerCoordinates: {
                 origin: expect.any(String),
                 dimensions: {
@@ -1315,29 +1315,542 @@ test('gamepad messages has correct sample form', () => {
 // Test toWord function, which converts button states to a single number
 test('toWord returns 0 when no buttons pressed', () => {
     expect(toWord(gamepad)).toBe(0);
-  });
+});
   
-  // Press the "south" button, (A on Xbox controller, X on PS4 controller)
-  test('toWord returns 4096 when south button pressed', () => {
+// Press the "south" button, (A on Xbox controller, X on PS4 controller)
+test('toWord returns 4096 when south button pressed', () => {
     const g = cloneDeep(gamepad);
     g.buttons.south.isPressed = true;
     expect(toWord(g)).toBe(4096);
-  });
-  
-  // Press the "east" button, (B on Xbox controller, O on PS4 controller)
-  test('toWord returns 8192 when east button pressed', () => {
+});
+
+// Press the "east" button, (B on Xbox controller, O on PS4 controller)
+test('toWord returns 8192 when east button pressed', () => {
     const g = cloneDeep(gamepad);
     g.buttons.east.isPressed = true;
     expect(toWord(g)).toBe(8192);
-  });
-  
-  // TODO - add tests for all buttons
-  
-  // Button combinations
-  // Left shoulder and south button
-  test('toWord returns 4352 when left shoulder and south button pressed', () => {
+});
+
+// TODO - add tests for all buttons
+
+// Button combinations
+// Left shoulder and south button
+test('toWord returns 4352 when left shoulder and south button pressed', () => {
     const g = cloneDeep(gamepad);
     g.buttons.leftShoulder.isPressed = true;
     g.buttons.south.isPressed = true;
     expect(toWord(g)).toBe(4352);
-  });
+});
+
+// Left shoulder and east button
+test('toWord returns 8448 when left shoulder and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.leftShoulder.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8448);
+});
+
+// Left shoulder and west button
+test('toWord returns 16640 when left shoulder and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.leftShoulder.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16640);
+});
+
+// Left  shoulder and north button
+test('toWord returns 33024 when left shoulder and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.leftShoulder.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(33024);
+});
+
+// Right shoulder and south button
+test('toWord returns 4608 when right shoulder and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.rightShoulder.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4608);
+});
+
+// Right shoulder and east button
+test('toWord returns 8704 when right shoulder and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.rightShoulder.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8704);
+});
+
+// Right shoulder and west button
+test('toWord returns 16896 when right shoulder and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.rightShoulder.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16896);
+});
+
+// Right shoulder and north button
+test('toWord returns 33280 when right shoulder and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.rightShoulder.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(33280);
+});
+
+// Left thumb and south button
+test('toWord returns 4160 when left thumb and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.sticks.left.button.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4160);
+});
+
+// Left thumb and east button
+test('toWord returns 8256 when left thumb and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.sticks.left.button.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8256);
+});
+
+// Left thumb and west button
+test('toWord returns 16448 when left thumb and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.sticks.left.button.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16448);
+});
+
+// Left thumb and north button
+test('toWord returns 32832 when left thumb and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.sticks.left.button.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(32832);
+});
+
+// Right thumb and south button
+test('toWord returns 4224 when right thumb and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.sticks.right.button.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4224);
+});
+
+// Right thumb and east button
+test('toWord returns 8320 when right thumb and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.sticks.right.button.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8320);
+});
+
+// Right thumb and west button
+test('toWord returns 16512 when right thumb and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.sticks.right.button.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16512);
+});
+
+// Right thumb and north button
+test('toWord returns 32896 when right thumb and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.sticks.right.button.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(32896);
+});
+
+// DPAD_UP and south button
+test('toWord returns 4097 when dpad up and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4097);
+});
+
+// DPAD_UP and east button
+test('toWord returns 8193 when dpad up and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8193);
+});
+
+// DPAD_UP and west button
+test('toWord returns 16385 when dpad up and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16385);
+});
+
+// DPAD_UP and north button
+test('toWord returns 32769 when dpad up and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(32769);
+});
+
+// DPAD_DOWN and south button
+test('toWord returns 4098 when dpad down and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4098);
+});
+
+
+// DPAD_DOWN and east button
+test('toWord returns 8194 when dpad down and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8194);
+});
+
+// DPAD_DOWN and west button
+test('toWord returns 16386 when dpad down and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16386);
+});
+
+// DPAD_DOWN and north button
+test('toWord returns 32770 when dpad down and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(32770);
+});
+
+// DPAD_LEFT and south button
+test('toWord returns 4100 when dpad left and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4100);
+});
+
+// DPAD_LEFT and east button
+test('toWord returns 8196 when dpad left and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8196);
+});
+
+// DPAD_LEFT and west button
+test('toWord returns 16388 when dpad left and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16388);
+});
+
+// DPAD_LEFT and north button
+test('toWord returns 32772 when dpad left and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(32772);
+});
+
+// DPAD_RIGHT and south button
+test('toWord returns 4104 when dpad right and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4104);
+});
+
+// DPAD_RIGHT and east button
+test('toWord returns 8200 when dpad right and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8200);
+});
+
+// DPAD_RIGHT and west button
+test('toWord returns 16392 when dpad right and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16392);
+});
+
+// DPAD_RIGHT and north button
+test('toWord returns 32776 when dpad right and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(32776);
+});
+
+// DPAD_UP and start button
+test('toWord returns 17 when dpad up and start button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.buttons.start.isPressed = true;
+    expect(toWord(g)).toBe(17);
+});
+
+// DPAD_UP and back button
+test('toWord returns 33 when dpad up and select button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.buttons.select.isPressed = true;
+    expect(toWord(g)).toBe(33);
+});
+
+// DPAD_UP and left thumb
+test('toWord returns 65 when dpad up and left thumb button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.sticks.left.button.isPressed = true;
+    expect(toWord(g)).toBe(65);
+});
+
+// DPAD_UP and right thumb
+test('toWord returns 129 when dpad up and right thumb button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.sticks.right.button.isPressed = true;
+    expect(toWord(g)).toBe(129);
+});
+
+// DPAD_UP and left shoulder
+test('toWord returns 257 when dpad up and left shoulder button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.buttons.leftShoulder.isPressed = true;
+    expect(toWord(g)).toBe(257);
+});
+
+// DPAD_UP and right shoulder
+test('toWord returns 513 when dpad up and right shoulder button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadUp.isPressed = true;
+    g.buttons.rightShoulder.isPressed = true;
+    expect(toWord(g)).toBe(513);
+});
+
+// DPAD_DOWN and start button
+test('toWord returns 18 when dpad down and start button button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.buttons.start.isPressed = true;
+    expect(toWord(g)).toBe(18);
+});
+
+// DPAD_DOWN and select button
+test('toWord returns 34 when dpad down and select button button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.buttons.select.isPressed = true;
+    expect(toWord(g)).toBe(34);
+});
+
+// DPAD_DOWN and left thumb
+test('toWord returns 66 when dpad down and left thumb button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.sticks.left.button.isPressed = true;
+    expect(toWord(g)).toBe(66);
+});
+
+// DPAD_DOWN and right thumb
+test('toWord returns 130 when dpad down and right thumb button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.sticks.right.button.isPressed = true;
+    expect(toWord(g)).toBe(130);
+});
+
+// DPAD_DOWN and left shoulder
+test('toWord returns 258 when dpad down and left shoulder button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.buttons.leftShoulder.isPressed = true;
+    expect(toWord(g)).toBe(258);
+});
+
+// DPAD_DOWN and right shoulder
+test('toWord returns 514 when dpad down and right shoulder button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadDown.isPressed = true;
+    g.buttons.rightShoulder.isPressed = true;
+    expect(toWord(g)).toBe(514);
+});
+
+// DPAD_LEFT and start button
+test('toWord returns 20 when dpad left and start button button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.buttons.start.isPressed = true;
+    expect(toWord(g)).toBe(20);
+});
+
+// DPAD_LEFT and select button
+test('toWord returns 36 when dpad left and select button button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.buttons.select.isPressed = true;
+    expect(toWord(g)).toBe(36);
+});
+
+// DPAD_LEFT and left thumb
+test('toWord returns 68 when dpad left and left thumb button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.sticks.left.button.isPressed = true;
+    expect(toWord(g)).toBe(68);
+});
+
+// DPAD_LEFT and right thumb
+test('toWord returns 132 when dpad left and right thumb button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.sticks.right.button.isPressed = true;
+    expect(toWord(g)).toBe(132);
+});
+
+// DPAD_LEFT and left shoulder
+test('toWord returns 260 when dpad left and left shoulder button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.buttons.leftShoulder.isPressed = true;
+    expect(toWord(g)).toBe(260);
+});
+
+// DPAD_LEFT and right shoulder
+test('toWord returns 516 when dpad left and right shoulder button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadLeft.isPressed = true;
+    g.buttons.rightShoulder.isPressed = true;
+    expect(toWord(g)).toBe(516);
+});
+
+// DPAD_RIGHT and start button
+test('toWord returns 24 when dpad right and start button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.buttons.start.isPressed = true;
+    expect(toWord(g)).toBe(24);
+});
+
+// DPAD_RIGHT and select button
+test('toWord returns 40 when dpad right and select button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.buttons.select.isPressed = true;
+    expect(toWord(g)).toBe(40);
+});
+
+// DPAD_RIGHT and left thumb
+test('toWord returns 72 when dpad right and left thumb button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.sticks.left.button.isPressed = true;
+    expect(toWord(g)).toBe(72);
+});
+
+// DPAD_RIGHT and right thumb
+test('toWord returns 136 when dpad right and right thumb button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.sticks.right.button.isPressed = true;
+    expect(toWord(g)).toBe(136);
+});
+
+// DPAD_RIGHT and left shoulder
+test('toWord returns 264 when dpad right and left shoulder button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.buttons.leftShoulder.isPressed = true;
+    expect(toWord(g)).toBe(264);
+});
+
+// DPAD_RIGHT and right shoulder
+test('toWord returns 520 when dpad right and right shoulder button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.dpadRight.isPressed = true;
+    g.buttons.rightShoulder.isPressed = true;
+    expect(toWord(g)).toBe(520);
+});
+
+// Start and Select button
+test('toWord returns 48 when start and select button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.start.isPressed = true;
+    g.buttons.select.isPressed = true;
+    expect(toWord(g)).toBe(48);
+});
+
+// Start and South
+test('toWord returns 4112 when start and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.start.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4112);
+});
+
+// Start and East
+test('toWord returns 8208 when start and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.start.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8208);
+});
+
+// Start and West
+test('toWord returns 16400 when start and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.start.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16400);
+});
+
+// Start and North
+test('toWord returns 32784 when start and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.start.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(32784);
+});
+
+// Select and South
+test('toWord returns 4128 when select and south button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.select.isPressed = true;
+    g.buttons.south.isPressed = true;
+    expect(toWord(g)).toBe(4128);
+});
+
+// Select and East
+test('toWord returns 8224 when select and east button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.select.isPressed = true;
+    g.buttons.east.isPressed = true;
+    expect(toWord(g)).toBe(8224);
+});
+
+// Select and West
+test('toWord returns 16416 when select and west button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.select.isPressed = true;
+    g.buttons.west.isPressed = true;
+    expect(toWord(g)).toBe(16416);
+});
+
+// Select and North
+test('toWord returns 32800 when select and north button pressed', () => {
+    const g = cloneDeep(gamepad);
+    g.buttons.select.isPressed = true;
+    g.buttons.north.isPressed = true;
+    expect(toWord(g)).toBe(32800);
+});
