@@ -1,3 +1,11 @@
+## [1.0.45](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.44...messaging-v1.0.45) (2023-10-04)
+
+
+### Bug Fixes
+
+* **test:** additional vitest scenarios for button combinations i gamepad ([b97387a](https://github.com/PlayCastDotIo/playcast-tools/commit/b97387a019252d894db34f9506ea1675ce3baf82))
+* **test:** update changes in gamepad to reflect in vitest. ([e714d71](https://github.com/PlayCastDotIo/playcast-tools/commit/e714d71561bd5535611eba89cb5cb8528367c39b))
+
 ## [1.0.44](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.43...messaging-v1.0.44) (2023-10-03)
 
 
