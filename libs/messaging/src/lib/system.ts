@@ -21,17 +21,9 @@ export type PlaycastSystemSchema = {
 };
 
 export type PlaycastSystemMessages =
-  | PlaycastMessageSystemSetPlayerCoordinates
   | PlaycastMessageSystemGetSchemas
   | PlaycastMessageSystemGetSchemasReply
   | PlaycastMessageSystemDie;
-
-export type PlaycastMessageSystemSetPlayerCoordinates = {
-  target: 'system';
-  action: 'setPlayerCoordinates';
-  isReply: false;
-  message: PlaycastSystemPlayerCoordinates;
-};
 
 export type PlaycastMessageSystemGetSchemas = {
   target: 'system';
@@ -42,7 +34,7 @@ export type PlaycastMessageSystemGetSchemas = {
 
 export type PlaycastMessageSystemGetSchemasReply = {
   target: 'system';
-  action: 'setPlayerCoordinates';
+  action: 'getSchemas';
   isReply: true;
   message: {
     schemas: PlaycastSystemSchema[];

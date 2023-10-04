@@ -8,12 +8,14 @@ import { PlaycastKeyboardMessages } from './keyboard';
 import { PlaycastMouseMessages } from './mouse';
 import { PlaycastStreamMessages } from './stream';
 import { PlaycastSystemMessages } from './system';
+import { PlaycastCameraMessages } from './camera';
 
 // Include all possible message sources
 export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
 
 // Union of all possible message types
 export type PlaycastMessageTarget =
+  | PlaycastCameraMessages
   | PlaycastGamepadMessages
   | PlaycastHubMessages
   | PlaycastKeyboardMessages
