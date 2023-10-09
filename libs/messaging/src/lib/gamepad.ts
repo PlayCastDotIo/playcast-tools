@@ -77,7 +77,6 @@ export type PlaycastPlayerDevice = {
 
 export type PlaycastPlayerDeviceGamepad = PlaycastPlayerDevice & {
     gamepadId: PlaycastGamepadId;
-    isNew: boolean;
 };
 
 export type PlaycastPlayerDeviceGamepadMap = PlaycastPlayerDeviceGamepad[];
