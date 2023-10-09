@@ -533,7 +533,7 @@ const xInput: XInput = {
 };
 
 const gamepadXInput: PlaycastGamepadXInput = {
-  deviceId: 5,
+  gamepadId: 3,
   playerCoordinates: {
     origin: 'topLeft',
     dimensions: {
@@ -651,64 +651,20 @@ const messageGamepadSetState: PlaycastMessageGamepadSetState = {
               wasPressed: true,
               wasReleased: false,
             },
-            right: {
-                stick: { x: 6, y: 66 },
-                button: {
-                    isPressed: false,
-                    wasPressed: true,
-                    wasReleased: false
-                }
+          },
+          right: {
+            stick: { x: 6, y: 66 },
+            button: {
+              isPressed: false,
+              wasPressed: true,
+              wasReleased: false
             }
+          }
         }
-    }]
+      }
+    ]
+  }
 }
-
-const xInput: XInput = {
-    wButtons: 2,
-    bLeftTrigger: 56,
-    bRightTrigger: 5,
-    sThumbLX: 45,
-    sThumbLY: 55,
-    sThumbRX: 77,
-    sThumbRY: 9
-}
-
-const gamepadXInput: PlaycastGamepadXInput = {
-    gamepadId: 0,
-    playerCoordinates: {
-        origin: 'topLeft',
-        dimensions: {
-            x: 2,
-            y: 6
-        }
-    },
-    xInput: {
-        wButtons: 267,
-        bLeftTrigger: 656,
-        bRightTrigger: 65,
-        sThumbLX: 475,
-        sThumbLY: 5,
-        sThumbRX: 787,
-        sThumbRY: 97
-    }
-}
-
-const messageGamepadSetState: PlaycastMessageGamepadSetState = {
-    target: 'gamepad',
-    action: 'setState',
-    isReply: false,
-    message: {
-        playerCoordinates: {
-            origin: 'topLeft',
-            dimensions: {
-                x: 2,
-                y: 6
-            }
-        },
-      },
-    ],
-  },
-};
 
 const messageGamepadSetXInput: PlaycastMessageGamepadSetXInput = {
     target: 'gamepad',
@@ -1189,7 +1145,7 @@ test('x input has correct form', () => {
 
 test('gamepad x input has correct form', () => {
   expect(gamepadXInput).toMatchObject<PlaycastGamepadXInput>({
-    deviceId: expect.any(Number),
+    gamepadId: expect.any(Number),
     playerCoordinates: {
       origin: expect.any(String),
       dimensions: {
@@ -1333,7 +1289,7 @@ test('message gamepad set x input has correct form', () => {
     action: expect.any(String),
     isReply: expect.any(Boolean),
     message: {
-      deviceId: expect.any(Number),
+      gamepadId: expect.any(Number),
       playerCoordinates: {
         origin: expect.any(String),
         dimensions: {
@@ -1349,7 +1305,9 @@ test('message gamepad set x input has correct form', () => {
         sThumbLY: expect.any(Number),
         sThumbRX: expect.any(Number),
         sThumbRY: expect.any(Number)
-    })
+      }
+    }
+  })
 })
 
 test('gamepad x input has correct form', () => {
