@@ -20,10 +20,17 @@ export type PlaycastSystemSchema = {
   isImplemented: boolean;
 };
 
+export type PlaycastSystemDeviceChange = {
+  type: 'gamepad' | 'keyboard' | 'mouse';
+  change: 'added' | 'removed' | 'connected' | 'disconnected' | 'reconnected' | 'enabled' | 'disabled' | 'configurationChanged' | 'softReset' | 'hardReset';
+  deviceId: number;
+}
+
 export type PlaycastSystemMessages =
   | PlaycastMessageSystemGetSchemas
   | PlaycastMessageSystemGetSchemasReply
-  | PlaycastMessageSystemDie;
+  | PlaycastMessageSystemDie
+  | PlaycastMessageSystemSetDeviceChange;
 
 export type PlaycastMessageSystemGetSchemas = {
   target: 'system';
@@ -46,4 +53,11 @@ export type PlaycastMessageSystemDie = {
   action: 'die';
   isReply: false;
   message: Record<string, never>;
+};
+
+export type PlaycastMessageSystemSetDeviceChange = {
+  target: 'system';
+  action: 'setDeviceChange';
+  isReply: false;
+  message: PlaycastSystemDeviceChange;
 };
