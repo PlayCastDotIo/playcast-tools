@@ -1,3 +1,11 @@
+## [1.0.46](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.45...messaging-v1.0.46) (2023-10-09)
+
+
+### Bug Fixes
+
+* **gamepad:** Remove isNew from type ([28e327a](https://github.com/PlayCastDotIo/playcast-tools/commit/28e327ae926a2dcea7fb54386a055a8bbb603c89))
+* **test:** Fix type, structure errors in gamepad.spec.ts ([d479637](https://github.com/PlayCastDotIo/playcast-tools/commit/d479637be5531da2c1058116d71c9197b3dbea40))
+
 ## [1.0.45](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.44...messaging-v1.0.45) (2023-10-04)
 
 
