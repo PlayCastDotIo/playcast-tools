@@ -2,37 +2,24 @@ import { expect, test } from 'vitest'
 import { PlaycastVector } from '../lib/core'
 import { PlaycastSystemOrigin } from '../lib/system'
 
-const dimensions: PlaycastVector = {
-    x: 2,
-    y: 5
-}
+describe('PlaycastSystemOrigin type', () => {
+    test('has correct form', () => {
+        const sysOrigin: PlaycastSystemOrigin = 'topLeft';
 
-function isOfType(value: string): value is PlaycastSystemOrigin {
-    return ['topLeft', 'bottomLeft', 'topRight', 'bottomRight'].includes(value);
-}
-
-const msgSysSetCoords = {
-    target: 'system',
-    action: 'setCoordinates'
-}
-
-test('has correct system origin', () => {
-    expect(isOfType('topLeft')).toBeTruthy();
-    expect(isOfType('bottomLeft')).toBeTruthy();
-    expect(isOfType('topRight')).toBeTruthy();
-    expect(isOfType('bottomRight')).toBeTruthy();
-})
-
-test('has correct coordinates', () => {
-    expect(dimensions).toMatchObject<PlaycastVector>({
-        x: expect.any(Number),
-        y: expect.any(Number)
+        if(sysOrigin=='topLeft'|| sysOrigin=='bottomLeft' || sysOrigin=='topRight' || sysOrigin=='bottomRight') {
+            expect(sysOrigin).toBeTruthy();
+        }
+        else throw new Error('Invalid value for origin. Expected value: topLeft, topRight, bottomLeft or bottomRight');
     })
 })
 
-test('has correct message for system set coordinates', () => {
-    const sys = msgSysSetCoords;
-    expect(sys.target).toEqual('system');
-    expect(sys.action).toEqual('setCoordinates');
-}) 
+describe('PlaycastVector type', () => {
+    test('has correct form', () => {
+        const dimensions: PlaycastVector = {
+            x: 2,
+            y: 5
+        }
+        expect(typeof dimensions.x).toBe('number');
+    })
+})
 

@@ -1,14 +1,15 @@
 import { expect, test } from 'vitest'
 import { PlaycastUser } from '../lib/user'
 
-const user: unknown = {
-  id: '123',
-  auth: 'abc',
-};
 
-test('user has correct form', () => {
-  expect(user).toMatchObject<PlaycastUser>({
-    id: expect.any(String),
-    auth: expect.any(String),
+describe('PlaycastUser type', () => {
+  test('user has correct form', () => {
+    const user: PlaycastUser = {
+      id: '123',
+      auth: 'abc',
+    };
+
+    expect(typeof user.id).toBe('string');
+    expect(typeof user.auth).toBe('string');
   });
 });

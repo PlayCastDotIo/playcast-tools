@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="123" failures="0" errors="0" time="1.712">
-    <testsuite name="src/tests/core.spec.ts" timestamp="2023-10-12T11:43:47.908Z" hostname="LAPTOP-SH56CJQT" tests="6" failures="0" errors="0" skipped="0" time="0.015">
-        <testcase classname="src/tests/core.spec.ts" name="core has correct vector" time="0.005">
+<testsuites name="vitest tests" tests="122" failures="0" errors="0" time="1.423">
+    <testsuite name="src/tests/core.spec.ts" timestamp="2023-10-13T14:19:22.609Z" hostname="LAPTOP-SH56CJQT" tests="6" failures="0" errors="0" skipped="0" time="0.011">
+        <testcase classname="src/tests/core.spec.ts" name="core has correct vector" time="0.003">
         </testcase>
-        <testcase classname="src/tests/core.spec.ts" name="core has correct button state" time="0.001">
+        <testcase classname="src/tests/core.spec.ts" name="core has correct button state" time="0">
         </testcase>
-        <testcase classname="src/tests/core.spec.ts" name="core has correct name and value pair" time="0.002">
+        <testcase classname="src/tests/core.spec.ts" name="core has correct name and value pair" time="0.001">
         </testcase>
-        <testcase classname="src/tests/core.spec.ts" name="PlaycastNameValuePair type has correct name and value is a string" time="0.001">
+        <testcase classname="src/tests/core.spec.ts" name="PlaycastNameValuePair type has correct name and value is a string" time="0">
         </testcase>
-        <testcase classname="src/tests/core.spec.ts" name="PlaycastNameValuePair type has correct name and value is a integer" time="0">
+        <testcase classname="src/tests/core.spec.ts" name="PlaycastNameValuePair type has correct name and value is a integer" time="0.001">
         </testcase>
-        <testcase classname="src/tests/core.spec.ts" name="PlaycastNameValuePair type has correct name and value is a boolean" time="0">
+        <testcase classname="src/tests/core.spec.ts" name="PlaycastNameValuePair type has correct name and value is a boolean" time="0.001">
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/gamepad.spec.ts" timestamp="2023-10-12T11:43:47.914Z" hostname="LAPTOP-SH56CJQT" tests="80" failures="0" errors="0" skipped="0" time="0.086">
-        <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastTrigger type &gt; trigger has correct form" time="0.005">
+    <testsuite name="src/tests/gamepad.spec.ts" timestamp="2023-10-13T14:19:22.620Z" hostname="LAPTOP-SH56CJQT" tests="80" failures="0" errors="0" skipped="0" time="0.05">
+        <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastTrigger type &gt; trigger has correct form" time="0.003">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastStick type &gt; stick has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastGamepadInputFromWebGL type &gt; gamepad input from WebGL has correct form" time="0.004">
+        <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastGamepadInputFromWebGL type &gt; gamepad input from WebGL has correct form" time="0.003">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="game pads input from WebGL has correct form" time="0.006">
+        <testcase classname="src/tests/gamepad.spec.ts" name="game pads input from WebGL has correct form" time="0.004">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="game pad has correct form" time="0.002">
+        <testcase classname="src/tests/gamepad.spec.ts" name="game pad has correct form" time="0.001">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="gamepad state has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="XInput type &gt; x input has correct form" time="0.002">
-        </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastGamepadXInput type &gt; input has correct form" time="0.002">
-        </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastMessageGamepadSetXInput type &gt; message gamepad set state has correct form" time="0.003">
+        <testcase classname="src/tests/gamepad.spec.ts" name="XInput type &gt; x input has correct form" time="0.001">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastGamepadXInput type &gt; input has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="message gamepad set state has correct form" time="0.002">
+        <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastMessageGamepadSetXInput type &gt; message gamepad set state has correct form" time="0.002">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="gamepad messages has correct sample form" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="PlaycastGamepadXInput type &gt; input has correct form" time="0">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="message gamepad set state has correct form" time="0.001">
+        </testcase>
+        <testcase classname="src/tests/gamepad.spec.ts" name="gamepad messages has correct sample form" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 0 when no buttons pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4096 when south button pressed" time="0.006">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4096 when south button pressed" time="0.003">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8192 when east button pressed" time="0">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8192 when east button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4352 when left shoulder and south button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4352 when left shoulder and south button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8448 when left shoulder and east button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16640 when left shoulder and west button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16640 when left shoulder and west button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 33024 when left shoulder and north button pressed" time="0">
         </testcase>
@@ -59,49 +59,49 @@
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16896 when right shoulder and west button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 33280 when right shoulder and north button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 33280 when right shoulder and north button pressed" time="0.003">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4160 when left thumb and south button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8256 when left thumb and east button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8256 when left thumb and east button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16448 when left thumb and west button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32832 when left thumb and north button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4224 when right thumb and south button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4224 when right thumb and south button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8320 when right thumb and east button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16512 when right thumb and west button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16512 when right thumb and west button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32896 when right thumb and north button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32896 when right thumb and north button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4097 when dpad up and south button pressed" time="0">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4097 when dpad up and south button pressed" time="0.001">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8193 when dpad up and east button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16385 when dpad up and west button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16385 when dpad up and west button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32769 when dpad up and north button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4098 when dpad down and south button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4098 when dpad down and south button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8194 when dpad down and east button pressed" time="0">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8194 when dpad down and east button pressed" time="0.001">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16386 when dpad down and west button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32770 when dpad down and north button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32770 when dpad down and north button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4100 when dpad left and south button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8196 when dpad left and east button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8196 when dpad left and east button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16388 when dpad left and west button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32772 when dpad left and north button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32772 when dpad left and north button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4104 when dpad right and south button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4104 when dpad right and south button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8200 when dpad right and east button pressed" time="0">
         </testcase>
@@ -109,9 +109,9 @@
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32776 when dpad right and north button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 17 when dpad up and start button pressed" time="0.002">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 17 when dpad up and start button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 33 when dpad up and select button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 33 when dpad up and select button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 65 when dpad up and left thumb button pressed" time="0">
         </testcase>
@@ -125,7 +125,7 @@
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 34 when dpad down and select button button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 66 when dpad down and left thumb button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 66 when dpad down and left thumb button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 130 when dpad down and right thumb button pressed" time="0.001">
         </testcase>
@@ -145,123 +145,121 @@
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 516 when dpad left and right shoulder button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 24 when dpad right and start button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 24 when dpad right and start button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 40 when dpad right and select button pressed" time="0">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 40 when dpad right and select button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 72 when dpad right and left thumb button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 72 when dpad right and left thumb button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 136 when dpad right and right thumb button pressed" time="0.004">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 136 when dpad right and right thumb button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 264 when dpad right and left shoulder button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 264 when dpad right and left shoulder button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 520 when dpad right and right shoulder button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 48 when start and select button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 48 when start and select button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4112 when start and south button pressed" time="0">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4112 when start and south button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8208 when start and east button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8208 when start and east button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16400 when start and west button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32784 when start and north button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32784 when start and north button pressed" time="0">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4128 when select and south button pressed" time="0">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 4128 when select and south button pressed" time="0.001">
         </testcase>
-        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8224 when select and east button pressed" time="0.001">
+        <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 8224 when select and east button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 16416 when select and west button pressed" time="0">
         </testcase>
         <testcase classname="src/tests/gamepad.spec.ts" name="toWord returns 32800 when select and north button pressed" time="0">
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/hub.spec.ts" timestamp="2023-10-12T11:43:47.950Z" hostname="LAPTOP-SH56CJQT" tests="2" failures="0" errors="0" skipped="0" time="0.006">
-        <testcase classname="src/tests/hub.spec.ts" name="PlaycastHubEcho type &gt; hub echo has correct form" time="0.002">
+    <testsuite name="src/tests/hub.spec.ts" timestamp="2023-10-13T14:19:22.665Z" hostname="LAPTOP-SH56CJQT" tests="2" failures="0" errors="0" skipped="0" time="0.009">
+        <testcase classname="src/tests/hub.spec.ts" name="PlaycastHubEcho type &gt; hub echo has correct form" time="0.003">
         </testcase>
-        <testcase classname="src/tests/hub.spec.ts" name="PlaycastMessageHubEcho type &gt; message hub echo has correct form" time="0.001">
+        <testcase classname="src/tests/hub.spec.ts" name="PlaycastMessageHubEcho type &gt; message hub echo has correct form" time="0.002">
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/keyboard.spec.ts" timestamp="2023-10-12T11:43:47.951Z" hostname="LAPTOP-SH56CJQT" tests="8" failures="0" errors="0" skipped="0" time="0.034">
-        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKeyDetail type &gt; has correct form" time="0.005">
+    <testsuite name="src/tests/keyboard.spec.ts" timestamp="2023-10-13T14:19:22.666Z" hostname="LAPTOP-SH56CJQT" tests="8" failures="0" errors="0" skipped="0" time="0.015">
+        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKeyDetail type &gt; has correct form" time="0.003">
         </testcase>
-        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKey type &gt; cast key has correct form" time="0.009">
+        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKey type &gt; cast key has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKeyboardState type &gt; has correct form" time="0.002">
+        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKeyboardState type &gt; has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKeyboardMessages type &gt; keyboard message has correct sample form" time="0.001">
+        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKeyboardMessages type &gt; keyboard message has correct sample form" time="0">
         </testcase>
-        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastMessageKeyboardSetState type &gt; message keyboard set state has correct form" time="0.001">
+        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastMessageKeyboardSetState type &gt; message keyboard set state has correct form" time="0">
         </testcase>
-        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastMessageKeyboardDown type &gt; message keyboard down has correct form" time="0.002">
+        <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastMessageKeyboardDown type &gt; message keyboard down has correct form" time="0.001">
         </testcase>
         <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastMessageKeyboardUp type &gt; message keyboard up has correct form" time="0.001">
         </testcase>
         <testcase classname="src/tests/keyboard.spec.ts" name="PlaycastKeyboardEven type &gt; keyboard event has correct form" time="0.001">
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/message.spec.ts" timestamp="2023-10-12T11:43:47.952Z" hostname="LAPTOP-SH56CJQT" tests="4" failures="0" errors="0" skipped="0" time="0.013">
-        <testcase classname="src/tests/message.spec.ts" name="message source has correct form" time="0.003">
+    <testsuite name="src/tests/message.spec.ts" timestamp="2023-10-13T14:19:22.669Z" hostname="LAPTOP-SH56CJQT" tests="4" failures="0" errors="0" skipped="0" time="0.015">
+        <testcase classname="src/tests/message.spec.ts" name="PlaycastMessageSource type &gt; message source has correct form" time="0.004">
         </testcase>
-        <testcase classname="src/tests/message.spec.ts" name="message target has correct sample form" time="0.003">
+        <testcase classname="src/tests/message.spec.ts" name="PlaycastMessageTarget type &gt; message target has correct sample form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/message.spec.ts" name="message header has correct form" time="0.001">
+        <testcase classname="src/tests/message.spec.ts" name="PlaycastMessageHeader type &gt; message header has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/message.spec.ts" name="message has correct sample form" time="0.001">
+        <testcase classname="src/tests/message.spec.ts" name="PlaycastMessageTarget type &gt; message has correct sample form" time="0">
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/mouse.spec.ts" timestamp="2023-10-12T11:43:47.953Z" hostname="LAPTOP-SH56CJQT" tests="18" failures="0" errors="0" skipped="0" time="0.037">
-        <testcase classname="src/tests/mouse.spec.ts" name="mouse mode has correct form" time="0.003">
+    <testsuite name="src/tests/mouse.spec.ts" timestamp="2023-10-13T14:19:22.670Z" hostname="LAPTOP-SH56CJQT" tests="18" failures="0" errors="0" skipped="0" time="0.06">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMouseMode type &gt; mouse mode has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="cursor lock state has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastCursorLockState &gt; cursor lock state has correct form" time="0">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="target button has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastTargetButton type &gt; target button has correct form" time="0">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="mouse button state has correct form" time="0.003">
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse button state has correct form" time="0.002">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="cursor state has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlasycastCursorState &gt; cursor state has correct form" time="0">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="mouse input from webGL has correct form" time="0">
+        <testcase classname="src/tests/mouse.spec.ts" name="mouse input from webGL has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="mouse location has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMouseLocation type &gt; mouse location has correct form" time="0">
         </testcase>
         <testcase classname="src/tests/mouse.spec.ts" name="mouse state has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="mouse button has correct form" time="0">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMouseButton type &gt; mouse button has correct form" time="0.002">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="mouse wheel has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMouseWheel type &gt; mouse wheel has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="message mouse set mode has correct form" time="0">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMessageMouseSetMode type &gt; message mouse set mode has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="message mouse set location has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMessageMouseSetLocation &gt; message mouse set location has correct form" time="0">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="message mouse move has correct form" time="0">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMessageMouseMove type &gt; message mouse move has correct form" time="0">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="message mouse down has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMessageMouseDown type &gt; message mouse down has correct form" time="0">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="message mouse down has correct form" time="0">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMessageMouseUp &gt; message mouse down has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="message mouse wheel has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMessageMouseWheel type &gt; message mouse wheel has correct form" time="0">
         </testcase>
         <testcase classname="src/tests/mouse.spec.ts" name="message mouse set state has correct form" time="0.001">
         </testcase>
-        <testcase classname="src/tests/mouse.spec.ts" name="mouse event has correct form" time="0.001">
+        <testcase classname="src/tests/mouse.spec.ts" name="PlaycastMouseEvent type &gt; mouse event has correct form" time="0">
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/stream.spec.ts" timestamp="2023-10-12T11:43:47.958Z" hostname="LAPTOP-SH56CJQT" tests="1" failures="0" errors="0" skipped="0" time="0.009">
-        <testcase classname="src/tests/stream.spec.ts" name="stream has correct form" time="0.003">
+    <testsuite name="src/tests/stream.spec.ts" timestamp="2023-10-13T14:19:22.674Z" hostname="LAPTOP-SH56CJQT" tests="1" failures="0" errors="0" skipped="0" time="0.007">
+        <testcase classname="src/tests/stream.spec.ts" name="PlaycastMessageStreamSetDimensions type &gt; stream has correct form" time="0.003">
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/system.spec.ts" timestamp="2023-10-12T11:43:47.958Z" hostname="LAPTOP-SH56CJQT" tests="3" failures="0" errors="0" skipped="0" time="0.015">
-        <testcase classname="src/tests/system.spec.ts" name="has correct system origin" time="0.004">
+    <testsuite name="src/tests/system.spec.ts" timestamp="2023-10-13T14:19:22.674Z" hostname="LAPTOP-SH56CJQT" tests="2" failures="0" errors="0" skipped="0" time="0.005">
+        <testcase classname="src/tests/system.spec.ts" name="PlaycastSystemOrigin type &gt; has correct form" time="0.002">
         </testcase>
-        <testcase classname="src/tests/system.spec.ts" name="has correct coordinates" time="0.004">
-        </testcase>
-        <testcase classname="src/tests/system.spec.ts" name="has correct message for system set coordinates" time="0.001">
+        <testcase classname="src/tests/system.spec.ts" name="PlaycastVector type &gt; has correct form" time="0.001">
         </testcase>
     </testsuite>
-    <testsuite name="src/tests/user.spec.ts" timestamp="2023-10-12T11:43:47.959Z" hostname="LAPTOP-SH56CJQT" tests="1" failures="0" errors="0" skipped="0" time="0.01">
-        <testcase classname="src/tests/user.spec.ts" name="user has correct form" time="0.004">
+    <testsuite name="src/tests/user.spec.ts" timestamp="2023-10-13T14:19:22.675Z" hostname="LAPTOP-SH56CJQT" tests="1" failures="0" errors="0" skipped="0" time="0.008">
+        <testcase classname="src/tests/user.spec.ts" name="PlaycastUser type &gt; user has correct form" time="0.003">
         </testcase>
     </testsuite>
 </testsuites>
