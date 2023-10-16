@@ -1,3 +1,10 @@
+## [1.0.47](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.46...messaging-v1.0.47) (2023-10-09)
+
+
+### Bug Fixes
+
+* **system:** Add setDeviceChange message ([b558748](https://github.com/PlayCastDotIo/playcast-tools/commit/b5587484c1e47c047f54aa10e9468e84077f0de5))
+
 ## [1.0.46](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.45...messaging-v1.0.46) (2023-10-09)
 
 
