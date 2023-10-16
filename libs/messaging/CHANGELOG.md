@@ -1,3 +1,10 @@
+## [1.0.48](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.47...messaging-v1.0.48) (2023-10-16)
+
+
+### Bug Fixes
+
+* **mouse:** usable setMode for mouse ([721cff9](https://github.com/PlayCastDotIo/playcast-tools/commit/721cff92cbba29dd8a81f419402e30db447ce90a))
+
 ## [1.0.47](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.46...messaging-v1.0.47) (2023-10-09)
 
 
