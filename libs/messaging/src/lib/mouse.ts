@@ -2,12 +2,13 @@ import { cloneDeep, pick } from 'lodash';
 import { PlaycastButton, PlaycastVector } from './core';
 import { PlaycastSystemPlayerCoordinates } from './system';
 
-export type PlaycastMouseMode =
-  | 'none'
-  | 'absolute'
-  | 'relative'
-  | 'move'
-  | 'location';
+export type PlaycastMouseMode = {
+  mode: 'default' | 'absolute' | 'relative';
+  deviceType: 'mouse' | 'gamepad' | 'keyboard' | 'touch';
+  isBounded: boolean;
+  wrapMouse: boolean;
+  deviceId: number;
+};
 
 export type PlaycastCursorLockState =
   | 'none'
