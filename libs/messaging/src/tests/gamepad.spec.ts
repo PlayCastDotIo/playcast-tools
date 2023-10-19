@@ -14,6 +14,7 @@ import {
   PlaycastMessageGamepadSetXInput,
   toWord,
 } from '../lib/gamepad';
+import { type } from 'os';
 
 const gamepad: PlaycastGamepad = {
   deviceId: 0,
@@ -116,110 +117,6 @@ const gamepad: PlaycastGamepad = {
         wasReleased: false,
       },
     },
-  },
-};
-
-const trigger: PlaycastTrigger = {
-  value: 28,
-  isPressed: true,
-  wasPressed: true,
-  wasReleased: false,
-};
-
-const stick: PlaycastStick = {
-  stick: { x: 56, y: 22 },
-  button: {
-    isPressed: false,
-    wasPressed: true,
-    wasReleased: false,
-  },
-};
-
-const gamepadInputFromWebGL: PlaycastGamepadInputFromWebGL = {
-  deviceId: 5123,
-  buttonEast: {
-    isPressed: false,
-    wasPressed: false,
-    wasReleased: false,
-  },
-  buttonNorth: {
-    isPressed: true,
-    wasPressed: false,
-    wasReleased: false,
-  },
-  buttonSouth: {
-    isPressed: false,
-    wasPressed: false,
-    wasReleased: false,
-  },
-  buttonWest: {
-    isPressed: false,
-    wasPressed: false,
-    wasReleased: true,
-  },
-  dpadRight: {
-    isPressed: true,
-    wasPressed: true,
-    wasReleased: true,
-  },
-  dpadLeft: {
-    isPressed: true,
-    wasPressed: true,
-    wasReleased: true,
-  },
-  dpadUp: {
-    isPressed: true,
-    wasPressed: true,
-    wasReleased: true,
-  },
-  dpadDown: {
-    isPressed: true,
-    wasPressed: true,
-    wasReleased: true,
-  },
-  leftShoulder: {
-    isPressed: true,
-    wasPressed: true,
-    wasReleased: true,
-  },
-  leftStick: { x: 55, y: 5 },
-  leftStickButton: {
-    isPressed: false,
-    wasPressed: false,
-    wasReleased: true,
-  },
-  leftTrigger: {
-    value: 332,
-    isPressed: true,
-    wasPressed: true,
-    wasReleased: false,
-  },
-  rightShoulder: {
-    isPressed: true,
-    wasPressed: false,
-    wasReleased: true,
-  },
-  rightStick: { x: 45, y: 25 },
-  rightStickButton: {
-    isPressed: false,
-    wasPressed: false,
-    wasReleased: true,
-  },
-  rightTrigger: {
-    value: 66,
-    isPressed: true,
-    wasPressed: true,
-    wasReleased: false,
-  },
-  select: {
-    isPressed: true,
-    wasPressed: false,
-    wasReleased: true,
-  },
-  start: {
-    isPressed: true,
-    wasPressed: true,
-    wasReleased: true,
   },
 };
 
@@ -522,35 +419,9 @@ const gamepadState: PlaycastGamepadState = {
   ],
 };
 
-const xInput: XInput = {
-  wButtons: 2,
-  bLeftTrigger: 56,
-  bRightTrigger: 5,
-  sThumbLX: 45,
-  sThumbLY: 55,
-  sThumbRX: 77,
-  sThumbRY: 9,
-};
 
-const gamepadXInput: PlaycastGamepadXInput = {
-  gamepadId: 3,
-  playerCoordinates: {
-    origin: 'topLeft',
-    dimensions: {
-      x: 2,
-      y: 6,
-    },
-  },
-  xInput: {
-    wButtons: 267,
-    bLeftTrigger: 656,
-    bRightTrigger: 65,
-    sThumbLX: 475,
-    sThumbLY: 5,
-    sThumbRX: 787,
-    sThumbRY: 97,
-  },
-};
+
+
 
 const messageGamepadSetState: PlaycastMessageGamepadSetState = {
   target: 'gamepad',
@@ -666,30 +537,6 @@ const messageGamepadSetState: PlaycastMessageGamepadSetState = {
   }
 }
 
-const messageGamepadSetXInput: PlaycastMessageGamepadSetXInput = {
-    target: 'gamepad',
-    action: 'setXInput',
-    isReply: false,
-    message: {
-        gamepadId: 2,
-        playerCoordinates: {
-            origin: 'topLeft',
-            dimensions: {
-                x: 2,
-                y: 6
-            }
-        },
-        xInput: {
-            wButtons: 267,
-            bLeftTrigger: 656,
-            bRightTrigger: 65,
-            sThumbLX: 475,
-            sThumbLY: 5,
-            sThumbRX: 787,
-            sThumbRY: 97
-        }
-    }
-}
 
 const gamepadMessages: PlaycastGamepadMessages = {
     target: 'gamepad',
@@ -716,113 +563,190 @@ const gamepadMessages: PlaycastGamepadMessages = {
     }
 }
 
-test('trigger has correct form', () => {
-  expect(trigger).toMatchObject<PlaycastTrigger>({
-    value: expect.any(Number),
-    isPressed: expect.any(Boolean),
-    wasPressed: expect.any(Boolean),
-    wasReleased: expect.any(Boolean),
+describe('PlaycastTrigger type', () => {
+  test('trigger has correct form', () => {
+    const trigger: PlaycastTrigger = {
+      value: 28,
+      isPressed: true,
+      wasPressed: true,
+      wasReleased: false,
+    };
+    
+    expect(typeof trigger.value).toBe('number');
+    expect(typeof trigger.isPressed).toBe('boolean');
+    expect(typeof trigger.wasPressed).toBe('boolean');
+    expect(typeof trigger.wasReleased).toBe('boolean');
   });
 });
 
-test('stick has correct form', () => {
-  expect(stick).toMatchObject<PlaycastStick>({
-    stick: { x: expect.any(Number), y: expect.any(Number) },
-    button: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-  });
-});
+describe('PlaycastStick type', () => {
+  test('stick has correct form', () => {
+    const stick: PlaycastStick = {
+      stick: { x: 56, y: 22 },
+      button: {
+        isPressed: false,
+        wasPressed: true,
+        wasReleased: false,
+      },
+    };
 
-test('gamepad input from WebGL has correct form', () => {
-  expect(gamepadInputFromWebGL).toMatchObject<PlaycastGamepadInputFromWebGL>({
-    deviceId: expect.any(Number),
-    buttonEast: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    buttonNorth: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    buttonSouth: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    buttonWest: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    dpadRight: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    dpadLeft: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    dpadUp: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    dpadDown: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    leftShoulder: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    leftStick: { x: expect.any(Number), y: expect.any(Number) },
-    leftStickButton: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    leftTrigger: {
-      value: expect.any(Number),
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    rightShoulder: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    rightStick: { x: expect.any(Number), y: expect.any(Number) },
-    rightStickButton: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    rightTrigger: {
-      value: expect.any(Number),
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    select: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
-    start: {
-      isPressed: expect.any(Boolean),
-      wasPressed: expect.any(Boolean),
-      wasReleased: expect.any(Boolean),
-    },
+    const stk = stick.stick;
+    expect(typeof stk.x).toBe('number');
+    expect(typeof stk.y).toBe('number');
+
+    const btn = stick.button;
+    expect(typeof btn.isPressed).toBe('boolean');
+    expect(typeof btn.wasPressed).toBe('boolean');
+    expect(typeof btn.wasReleased).toBe('boolean');
+  });
+})
+
+describe('PlaycastGamepadInputFromWebGL type', () => {
+  test('gamepad input from WebGL has correct form', () => {
+    const gamepadInputFromWebGL: PlaycastGamepadInputFromWebGL = {
+      deviceId: 5123,
+      buttonEast: {
+        isPressed: false,
+        wasPressed: false,
+        wasReleased: false,
+      },
+      buttonNorth: {
+        isPressed: true,
+        wasPressed: false,
+        wasReleased: false,
+      },
+      buttonSouth: {
+        isPressed: false,
+        wasPressed: false,
+        wasReleased: false,
+      },
+      buttonWest: {
+        isPressed: false,
+        wasPressed: false,
+        wasReleased: true,
+      },
+      dpadRight: {
+        isPressed: true,
+        wasPressed: true,
+        wasReleased: true,
+      },
+      dpadLeft: {
+        isPressed: true,
+        wasPressed: true,
+        wasReleased: true,
+      },
+      dpadUp: {
+        isPressed: true,
+        wasPressed: true,
+        wasReleased: true,
+      },
+      dpadDown: {
+        isPressed: true,
+        wasPressed: true,
+        wasReleased: true,
+      },
+      leftShoulder: {
+        isPressed: true,
+        wasPressed: true,
+        wasReleased: true,
+      },
+      leftStick: { x: 55, y: 5 },
+      leftStickButton: {
+        isPressed: false,
+        wasPressed: false,
+        wasReleased: true,
+      },
+      leftTrigger: {
+        value: 332,
+        isPressed: true,
+        wasPressed: true,
+        wasReleased: false,
+      },
+      rightShoulder: {
+        isPressed: true,
+        wasPressed: false,
+        wasReleased: true,
+      },
+      rightStick: { x: 45, y: 25 },
+      rightStickButton: {
+        isPressed: false,
+        wasPressed: false,
+        wasReleased: true,
+      },
+      rightTrigger: {
+        value: 66,
+        isPressed: true,
+        wasPressed: true,
+        wasReleased: false,
+      },
+      select: {
+        isPressed: true,
+        wasPressed: false,
+        wasReleased: true,
+      },
+      start: {
+        isPressed: true,
+        wasPressed: true,
+        wasReleased: true,
+      },
+    };
+
+    expect(typeof gamepadInputFromWebGL.deviceId).toBe('number');
+    expect(typeof gamepadInputFromWebGL.buttonEast.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonEast.wasPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonEast.wasReleased).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonNorth.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonNorth.wasPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonNorth.wasReleased).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonSouth.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonSouth.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonSouth.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonWest.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonWest.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.buttonWest.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadRight.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadRight.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadRight.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadLeft.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadLeft.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadLeft.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadUp.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadUp.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadUp.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadDown.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadDown.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.dpadDown.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftShoulder.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftShoulder.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftShoulder.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftStick.x).toBe('number');
+    expect(typeof gamepadInputFromWebGL.leftStick.y).toBe('number');
+    expect(typeof gamepadInputFromWebGL.leftStickButton.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftStickButton.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftStickButton.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.leftTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightShoulder.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightShoulder.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightShoulder.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightStick.x).toBe('number');
+    expect(typeof gamepadInputFromWebGL.rightStick.y).toBe('number');
+    expect(typeof gamepadInputFromWebGL.rightStickButton.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightStickButton.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightStickButton.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.rightTrigger.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.select.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.select.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.select.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.start.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.start.isPressed).toBe('boolean');
+    expect(typeof gamepadInputFromWebGL.start.isPressed).toBe('boolean');
   });
 });
 
@@ -1131,206 +1055,252 @@ test('gamepad state has correct form', () => {
   });
 });
 
-test('x input has correct form', () => {
-  expect(xInput).toMatchObject<XInput>({
-    wButtons: expect.any(Number),
-    bLeftTrigger: expect.any(Number),
-    bRightTrigger: expect.any(Number),
-    sThumbLX: expect.any(Number),
-    sThumbLY: expect.any(Number),
-    sThumbRX: expect.any(Number),
-    sThumbRY: expect.any(Number),
+describe('XInput type', () => {
+  test('x input has correct form', () => {
+    const xInput: XInput = {
+      wButtons: 2,
+      bLeftTrigger: 56,
+      bRightTrigger: 5,
+      sThumbLX: 435,
+      sThumbLY: 5645,
+      sThumbRX: 767,
+      sThumbRY: 9,
+    };
+
+    const bTrigger_min_range = 0;
+    const bTrigger_max_range = 255;
+    const sThumb_min_range = -32768;
+    const sThumb_max_range = 32768;
+    
+    // Assert if bLeftTrigger is in range from 0 to 255
+    expect(xInput.bLeftTrigger).toBeGreaterThanOrEqual(bTrigger_min_range);
+    expect(xInput.bLeftTrigger).toBeLessThanOrEqual(bTrigger_max_range);
+
+    // Assert if bRightTrigger is in range from 0 to 255
+    expect(xInput.bRightTrigger).toBeGreaterThanOrEqual(bTrigger_min_range);
+    expect(xInput.bRightTrigger).toBeLessThanOrEqual(bTrigger_max_range);
+
+    // Assert if sThumbLX is in range from -32768 to 32768
+    expect(xInput.sThumbLX).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(xInput.sThumbLX).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbLX is in range from -32768 to 32768
+    expect(xInput.sThumbLY).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(xInput.sThumbLY).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbRX is in range from -32768 to 32768
+    expect(xInput.sThumbRX).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(xInput.sThumbRX).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbRY is in range from -32768 to 32768
+    expect(xInput.sThumbRY).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(xInput.sThumbRY).toBeLessThanOrEqual(sThumb_max_range);
   });
 });
 
-test('gamepad x input has correct form', () => {
-  expect(gamepadXInput).toMatchObject<PlaycastGamepadXInput>({
-    gamepadId: expect.any(Number),
-    playerCoordinates: {
-      origin: expect.any(String),
-      dimensions: {
-        x: expect.any(Number),
-        y: expect.any(Number),
-      },
-    },
-    xInput: {
-      wButtons: expect.any(Number),
-      bLeftTrigger: expect.any(Number),
-      bRightTrigger: expect.any(Number),
-      sThumbLX: expect.any(Number),
-      sThumbLY: expect.any(Number),
-      sThumbRX: expect.any(Number),
-      sThumbRY: expect.any(Number),
-    },
-  });
-});
-
-test('message gamepad set state has correct form', () => {
-  expect(messageGamepadSetState).toMatchObject<PlaycastMessageGamepadSetState>({
-    target: expect.any(String),
-    action: expect.any(String),
-    isReply: expect.any(Boolean),
-    message: {
+describe('PlaycastGamepadXInput type', () => {
+  test('input has correct form', () => {
+    const gamepadXInput: PlaycastGamepadXInput = {
+      gamepadId: -1,
       playerCoordinates: {
-        origin: expect.any(String),
+        origin: 'topLeft',
         dimensions: {
-          x: expect.any(Number),
-          y: expect.any(Number),
-        },
-      },
-      gamepads: [
-        {
-          deviceId: expect.any(Number),
-          buttons: {
-            east: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            north: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            south: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            west: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            leftShoulder: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            rightShoulder: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            select: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            start: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            dpadUp: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            dpadDown: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            dpadLeft: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            dpadRight: {
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-          },
-          triggers: {
-            left: {
-              value: expect.any(Number),
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-            right: {
-              value: expect.any(Number),
-              isPressed: expect.any(Boolean),
-              wasPressed: expect.any(Boolean),
-              wasReleased: expect.any(Boolean),
-            },
-          },
-          sticks: {
-            left: {
-              stick: { x: expect.any(Number), y: expect.any(Number) },
-              button: {
-                isPressed: expect.any(Boolean),
-                wasPressed: expect.any(Boolean),
-                wasReleased: expect.any(Boolean),
-              },
-            },
-            right: {
-              stick: { x: expect.any(Number), y: expect.any(Number) },
-              button: {
-                isPressed: expect.any(Boolean),
-                wasPressed: expect.any(Boolean),
-                wasReleased: expect.any(Boolean),
-              },
-            },
-          },
-        },
-      ],
-    },
-  });
-});
-
-test('message gamepad set x input has correct form', () => {
-  expect(
-    messageGamepadSetXInput
-  ).toMatchObject<PlaycastMessageGamepadSetXInput>({
-    target: expect.any(String),
-    action: expect.any(String),
-    isReply: expect.any(Boolean),
-    message: {
-      gamepadId: expect.any(Number),
-      playerCoordinates: {
-        origin: expect.any(String),
-        dimensions: {
-          x: expect.any(Number),
-          y: expect.any(Number),
+          x: 2,
+          y: 6,
         },
       },
       xInput: {
-        wButtons: expect.any(Number),
-        bLeftTrigger: expect.any(Number),
-        bRightTrigger: expect.any(Number),
-        sThumbLX: expect.any(Number),
-        sThumbLY: expect.any(Number),
-        sThumbRX: expect.any(Number),
-        sThumbRY: expect.any(Number)
-      }
+        wButtons: 255,
+        bLeftTrigger: 255,
+        bRightTrigger: 45,
+        sThumbLX: 0,
+        sThumbLY: -32768,
+        sThumbRX: 32768,
+        sThumbRY: 0,
+      },
+    };
+
+    if(gamepadXInput.gamepadId >= -1 && gamepadXInput.gamepadId <= 3) {
+      expect(gamepadXInput.gamepadId).toBeTruthy();
     }
-  })
+    else throw new Error('Invalid value for gamepad. Expected -1, 0, 1, 2, or 3.');
+
+    const bTrigger_min_range = 0;
+    const bTrigger_max_range = 255;
+    const sThumb_min_range = -32768;
+    const sThumb_max_range = 32768;
+    
+    // Assert if bLeftTrigger is in range from 0 to 255
+    expect(gamepadXInput.xInput.bLeftTrigger).toBeGreaterThanOrEqual(bTrigger_min_range);
+    expect(gamepadXInput.xInput.bLeftTrigger).toBeLessThanOrEqual(bTrigger_max_range);
+
+    // Assert if bRightTrigger is in range from 0 to 255
+    expect(gamepadXInput.xInput.bRightTrigger).toBeGreaterThanOrEqual(bTrigger_min_range);
+    expect(gamepadXInput.xInput.bRightTrigger).toBeLessThanOrEqual(bTrigger_max_range);
+
+    // Assert if sThumbLX is in range from -32768 to 32768
+    expect(gamepadXInput.xInput.sThumbLX).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(gamepadXInput.xInput.sThumbLX).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbLX is in range from -32768 to 32768
+    expect(gamepadXInput.xInput.sThumbLY).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(gamepadXInput.xInput.sThumbLY).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbRX is in range from -32768 to 32768
+    expect(gamepadXInput.xInput.sThumbRX).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(gamepadXInput.xInput.sThumbRX).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbRY is in range from -32768 to 32768
+    expect(gamepadXInput.xInput.sThumbRY).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(gamepadXInput.xInput.sThumbRY).toBeLessThanOrEqual(sThumb_max_range);
+  });
+
 })
 
-test('gamepad x input has correct form', () => {
-    expect(gamepadXInput).toMatchObject<PlaycastGamepadXInput>({
-        gamepadId: expect.any(Number),
-        playerCoordinates: {
-            origin: expect.any(String),
-            dimensions: {
-                x: expect.any(Number),
-                y: expect.any(Number)
-            }
-        },
-        xInput: {
-            wButtons: expect.any(Number),
-            bLeftTrigger: expect.any(Number),
-            bRightTrigger: expect.any(Number),
-            sThumbLX: expect.any(Number),
-            sThumbLY: expect.any(Number),
-            sThumbRX: expect.any(Number),
-            sThumbRY: expect.any(Number)
-        }
-    })
+describe('PlaycastMessageGamepadSetXInput type', () => {
+  test('message gamepad set state has correct form', () => {
+    const messageGamepadSetXInput: PlaycastMessageGamepadSetXInput = {
+      target: 'gamepad',
+      action: 'setXInput',
+      isReply: false,
+      message: {
+          gamepadId: 2,
+          playerCoordinates: {
+              origin: 'topLeft',
+              dimensions: {
+                  x: 2,
+                  y: 6
+              }
+          },
+          xInput: {
+              wButtons: 267,
+              bLeftTrigger: 255,
+              bRightTrigger: 65,
+              sThumbLX: 6643,
+              sThumbLY: 546,
+              sThumbRX: 22787,
+              sThumbRY: 970
+          }
+      }
+    }
+
+    expect(messageGamepadSetXInput.target).toBe('gamepad');
+    expect(messageGamepadSetXInput.action).toBe('setXInput');
+    
+    if(messageGamepadSetXInput.message.gamepadId >= -1 && messageGamepadSetXInput.message.gamepadId <= 3) {
+      expect(messageGamepadSetXInput.message.gamepadId).toBeTruthy();
+    }
+    else {
+      throw new Error('Invalid value for gamepad. Expected -1, 0, 1, 2, or 3.');
+    }
+
+    const origin = messageGamepadSetXInput.message.playerCoordinates.origin;
+    if(origin == 'topLeft' || origin == 'bottomLeft' || origin == 'bottomRight' || origin == 'topRight') {
+      expect(origin).toBeTruthy();
+    }
+    else {
+      throw new Error('Invalid value for origin. Expected values: topLeft | bottomLeft | bottomRight |topRight');
+    }
+
+    const bTrigger_min_range = 0;
+    const bTrigger_max_range = 255;
+    const sThumb_min_range = -32768;
+    const sThumb_max_range = 32768;
+    
+    // Assert if bLeftTrigger is in range from 0 to 255
+    expect(messageGamepadSetXInput.message.xInput.bLeftTrigger).toBeGreaterThanOrEqual(bTrigger_min_range);
+    expect(messageGamepadSetXInput.message.xInput.bLeftTrigger).toBeLessThanOrEqual(bTrigger_max_range);
+
+    // Assert if bRightTrigger is in range from 0 to 255
+    expect(messageGamepadSetXInput.message.xInput.bRightTrigger).toBeGreaterThanOrEqual(bTrigger_min_range);
+    expect(messageGamepadSetXInput.message.xInput.bRightTrigger).toBeLessThanOrEqual(bTrigger_max_range);
+
+    // Assert if sThumbLX is in range from -32768 to 32768
+    expect(messageGamepadSetXInput.message.xInput.sThumbLX).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(messageGamepadSetXInput.message.xInput.sThumbLX).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbLX is in range from -32768 to 32768
+    expect(messageGamepadSetXInput.message.xInput.sThumbLY).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(messageGamepadSetXInput.message.xInput.sThumbLY).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbRX is in range from -32768 to 32768
+    expect(messageGamepadSetXInput.message.xInput.sThumbRX).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(messageGamepadSetXInput.message.xInput.sThumbRX).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbRY is in range from -32768 to 32768
+    expect(messageGamepadSetXInput.message.xInput.sThumbRY).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(messageGamepadSetXInput.message.xInput.sThumbRY).toBeLessThanOrEqual(sThumb_max_range);
+
+  });
 })
+
+describe('PlaycastGamepadXInput type', () => {
+  test('input has correct form', () => {
+    const gamepadXInput: PlaycastGamepadXInput = {
+      gamepadId: 3,
+      playerCoordinates: {
+        origin: 'topLeft',
+        dimensions: {
+          x: 2,
+          y: 6,
+        },
+      },
+      xInput: {
+        wButtons: 255,
+        bLeftTrigger: 200,
+        bRightTrigger: 0,
+        sThumbLX: 0,
+        sThumbLY: 0,
+        sThumbRX: 32666,
+        sThumbRY: 0,
+      },
+    };
+
+    if(gamepadXInput.gamepadId >= -1 && gamepadXInput.gamepadId <= 3) {
+      expect(gamepadXInput.gamepadId).toBeTruthy();
+    }
+    else throw new Error('Invalid value for gamepad. Expected -1, 0, 1, 2, or 3.');
+
+    const origin = gamepadXInput.playerCoordinates.origin;
+    if(origin == 'topLeft' || origin == 'bottomLeft' || origin == 'bottomRight' || origin == 'topRight') {
+      expect(origin).toBeTruthy();
+    }
+    else {
+      throw new Error('Invalid value for origin. Expected values: topLeft | bottomLeft | bottomRight |topRight');
+    }
+
+    const bTrigger_min_range = 0;
+    const bTrigger_max_range = 255;
+    const sThumb_min_range = -32768;
+    const sThumb_max_range = 32768;
+    
+    // Assert if bLeftTrigger is in range from 0 to 255
+    expect(gamepadXInput.xInput.bLeftTrigger).toBeGreaterThanOrEqual(bTrigger_min_range);
+    expect(gamepadXInput.xInput.bLeftTrigger).toBeLessThanOrEqual(bTrigger_max_range);
+
+    // Assert if bRightTrigger is in range from 0 to 255
+    expect(gamepadXInput.xInput.bRightTrigger).toBeGreaterThanOrEqual(bTrigger_min_range);
+    expect(gamepadXInput.xInput.bRightTrigger).toBeLessThanOrEqual(bTrigger_max_range);
+
+    // Assert if sThumbLX is in range from -32768 to 32768
+    expect(gamepadXInput.xInput.sThumbLX).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(gamepadXInput.xInput.sThumbLX).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbLX is in range from -32768 to 32768
+    expect(gamepadXInput.xInput.sThumbLY).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(gamepadXInput.xInput.sThumbLY).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbRX is in range from -32768 to 32768
+    expect(gamepadXInput.xInput.sThumbRX).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(gamepadXInput.xInput.sThumbRX).toBeLessThanOrEqual(sThumb_max_range);
+
+    // Assert if sThumbRY is in range from -32768 to 32768
+    expect(gamepadXInput.xInput.sThumbRY).toBeGreaterThanOrEqual(sThumb_min_range);
+    expect(gamepadXInput.xInput.sThumbRY).toBeLessThanOrEqual(sThumb_max_range);
+  });
+})
+
+
 
 test('message gamepad set state has correct form', () => {
     expect(messageGamepadSetState).toMatchObject<PlaycastMessageGamepadSetState>({
@@ -1446,6 +1416,7 @@ test('message gamepad set state has correct form', () => {
     })
 })
 
+/*
 test('message gamepad set x input has correct form', () => {
     expect(messageGamepadSetXInput).toMatchObject<PlaycastMessageGamepadSetXInput>({
         target: expect.any(String),
@@ -1472,6 +1443,7 @@ test('message gamepad set x input has correct form', () => {
         }
     })
 })
+*/
 
 test('gamepad messages has correct sample form', () => {
     expect(gamepadMessages).toMatchObject<PlaycastGamepadMessages>({
