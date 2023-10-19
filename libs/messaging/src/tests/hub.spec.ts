@@ -1,40 +1,42 @@
 import { expect, test } from 'vitest'
 import { PlaycastHubEcho, PlaycastMessageHubEcho} from '../lib/hub'
 
-const hubEcho: PlaycastHubEcho = {
-    target: 'home',
-    action: 'start',
-    enabled: false
-}
+describe('PlaycastHubEcho type', () => {
+    test('hub echo has correct form', () => {
+        const hubEcho: PlaycastHubEcho = {
+            target: 'home',
+            action: 'start',
+            enabled: false
+        }
 
-const messageHubEcho: any = {
-    target: 'hub',
-    action: 'echo',
-    isReply: false,
-    message: { 
-        target: 'home',
-        action: 'start',
-        enabled: true
-    }
-}
-
-test('hub echo has correct form', () => {
-    expect(hubEcho).toMatchObject<PlaycastHubEcho>({
-      target: expect.any(String),
-      action: expect.any(String),
-      enabled: expect.any(Boolean)
+        expect(hubEcho.target).toBe('home');
+        expect(hubEcho.action).toBe('start');
+        expect(hubEcho.enabled).toBe(false);
     });
 });
 
-test('message hub echo has correct form', () => {
-    expect(messageHubEcho).toMatchObject<PlaycastMessageHubEcho>({
-        target: expect.any(String),
-        action: expect.any(String),
-        isReply: expect.any(Boolean),
-        message: {
-            target: expect.any(String),
-            action: expect.any(String),
-            enabled: expect.any(Boolean)
-        }
-    })
-})
+describe('PlaycastMessageHubEcho type', () => {
+    test('message hub echo has correct form', () => {
+        const messageHubEcho: PlaycastMessageHubEcho = {
+            target: 'hub',
+            action: 'echo',
+            isReply: false,
+            message: {
+                target: 'home',
+                action: 'start',
+                enabled: false
+            }
+        };
+
+        expect(messageHubEcho.target).toBe('hub');
+        expect(messageHubEcho.action).toBe('echo');
+        expect(messageHubEcho.isReply).toBe(false);   
+
+        const innerMessage = messageHubEcho.message;
+        expect(innerMessage.target).toBe('home');
+        expect(innerMessage.action).toBe('start');
+        expect(innerMessage.enabled).toBe(false);
+        
+    });
+});
+    

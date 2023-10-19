@@ -38,3 +38,36 @@ test('core has correct name and value pair', () => {
         value: expect.any(Number)
     });
 });
+
+test('PlaycastNameValuePair type has correct name and value is a string', () => {
+    const nameValuePair1: PlaycastNameValuePair = {
+        name: 'Jonathan',
+        value: 'test'
+    }
+    expect(nameValuePair1).toMatchObject<PlaycastNameValuePair>({
+        name: expect.any(String),
+        value: expect.any(String)
+    });
+});
+
+test('PlaycastNameValuePair type has correct name and value is a integer', () => {
+    const nameValuePair1: PlaycastNameValuePair = {
+        name: 'Jonathan',
+        value: 663
+    }
+    expect(nameValuePair1).toMatchObject<PlaycastNameValuePair>({
+        name: expect.any(String),
+        value: expect.any(Number)
+    });
+});
+
+test('PlaycastNameValuePair type has correct name and value is a boolean', () => {
+    const nameValuePair1: PlaycastNameValuePair = {
+        name: 'Jonathan',
+        value: false
+    }
+    expect(nameValuePair1).toMatchObject<PlaycastNameValuePair>({
+        name: expect.any(String),
+        value: expect.any(Boolean)
+    });
+});
