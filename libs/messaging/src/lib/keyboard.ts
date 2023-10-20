@@ -165,50 +165,51 @@ export const keyboardStateToEvents = (
 };
 
 export const keyMap: { [key:number]: number } = {
-  1: 32,
-  2: 13,
-  3: 9,
-  4: 192,
-  5: 222,
-  6: 186,
-  7: 188,
-  8: 190,
-  9: 191,
-  10: 220,
-  11: 219,
-  12: 221,
-  13: 189,
-  14: 187,
-  51: 16,
-  52: 16,
-  53: 18,
-  54: 18,
-  55: 17,
-  56: 17,
-  57: 91,
-  58: 92,
-  59: 93,
-  60: 27,
-  61: 37,
-  62: 39,
-  63: 38,
-  64: 40,
-  65: 8,
-  66: 34,
-  67: 33,
-  68: 36,
-  69: 35,
-  70: 45,
-  71: 46,
-  72: 20,
-  73: 144,
-  74: 44,
-  75: 145,
-  76: 19,
-  77: 13,
-  78: 111,
-  79: 106,
-  80: 107,
-  81: 109,
-  82: 110,
+  1: 32, // space
+  2: 13, // enter
+  3: 9, // tab
+  4: 192, // backquote
+  5: 222, // quote
+  6: 186, // semicolon
+  7: 188, // comma
+  8: 190, // period
+  9: 191, // slash
+  10: 220, // backslash
+  11: 219, // left bracket
+  12: 221, // right bracket
+  13: 189, // minus
+  14: 187, // equals
+  51: 16, // left shift
+  52: 16, // right shift
+  53: 18, // left alt
+  54: 18, // right alt
+  55: 17, // left ctrl
+  56: 17, // right ctrl
+  57: 91, // left meta
+  58: 92, // right meta
+  59: 93, // context menu
+  60: 27, // escape
+  61: 37, // left arrow
+  62: 39, // right arrow
+  63: 38, // up arrow
+  64: 40, // down arrow
+  65: 8, // backspace
+  66: 34, // page down
+  67: 33, // page up
+  68: 36, // home
+  69: 35, // end
+  70: 45, // insert
+  71: 46, // delete
+  72: 20, // caps lock
+  73: 144, // num lock
+  74: 44, // print screen
+  75: 145, // scroll lock
+  76: 19, // pause
+  77: 13, // numpad enter
+  78: 111, // numpad divide
+  79: 106, // numpad multiply
+  80: 107, // numpad add
+  81: 109, // numpad subtract
+  82: 110, // numpad decimal
+  83: 96, // numpad 0
 };
