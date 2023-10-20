@@ -1,3 +1,10 @@
+## [1.0.49](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.48...messaging-v1.0.49) (2023-10-20)
+
+
+### Bug Fixes
+
+* **keyboard:** Add numpad 0 mapping plus comments on key mappings ([9636c4c](https://github.com/PlayCastDotIo/playcast-tools/commit/9636c4c543638ecab0fcc1983a81f1159ebef033))
+
 ## [1.0.48](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.47...messaging-v1.0.48) (2023-10-16)
 
 
