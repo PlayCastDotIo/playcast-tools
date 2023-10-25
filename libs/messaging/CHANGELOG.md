@@ -1,3 +1,10 @@
+## [1.0.50](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.49...messaging-v1.0.50) (2023-10-25)
+
+
+### Bug Fixes
+
+* **system:** Include display dimensions in player coordinates ([a710e3e](https://github.com/PlayCastDotIo/playcast-tools/commit/a710e3e9d3e913abbbcd32e1e188bf3e3a275a4b))
+
 ## [1.0.49](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.48...messaging-v1.0.49) (2023-10-20)
 
 
