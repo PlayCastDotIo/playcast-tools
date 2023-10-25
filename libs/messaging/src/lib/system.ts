@@ -9,6 +9,7 @@ export type PlaycastSystemOrigin =
 export type PlaycastSystemPlayerCoordinates = {
   origin: PlaycastSystemOrigin;
   dimensions: PlaycastVector;
+  display: PlaycastVector;
 };
 
 export type PlaycastSystemSchema = {
