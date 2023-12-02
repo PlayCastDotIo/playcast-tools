@@ -9,6 +9,7 @@ import { PlaycastMouseMessages } from './mouse';
 import { PlaycastStreamMessages } from './stream';
 import { PlaycastSystemMessages } from './system';
 import { PlaycastCameraMessages } from './camera';
+import { PlaycastPlayerMessages } from './player';
 
 // Include all possible message sources
 export type PlaycastMessageSource = 'player' | 'host' | 'playjector';
@@ -20,6 +21,7 @@ export type PlaycastMessageTarget =
   | PlaycastHubMessages
   | PlaycastKeyboardMessages
   | PlaycastMouseMessages
+  | PlaycastPlayerMessages
   | PlaycastStreamMessages
   | PlaycastSystemMessages;
 
