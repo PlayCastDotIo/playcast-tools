@@ -6,6 +6,7 @@ export * from './lib/hub';
 export * from './lib/keyboard';
 export * from './lib/message';
 export * from './lib/mouse';
+export * from './lib/player';
 export * from './lib/stream';
 export * from './lib/system';
 export * from './lib/user';
