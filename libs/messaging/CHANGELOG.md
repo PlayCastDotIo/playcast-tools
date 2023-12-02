@@ -1,3 +1,10 @@
+## [1.0.51](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.50...messaging-v1.0.51) (2023-12-02)
+
+
+### Bug Fixes
+
+* **player:** Add player input access message ([c5605bc](https://github.com/PlayCastDotIo/playcast-tools/commit/c5605bc193f03334afdd93e7a825b684a72bf6e5))
+
 ## [1.0.50](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.49...messaging-v1.0.50) (2023-10-25)
 
 
