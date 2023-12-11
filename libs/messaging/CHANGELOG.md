@@ -1,3 +1,10 @@
+## [1.0.52](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.51...messaging-v1.0.52) (2023-12-02)
+
+
+### Bug Fixes
+
+* **player:** Include player messages in exports ([658a678](https://github.com/PlayCastDotIo/playcast-tools/commit/658a678536ee259c4de975d8ad30791d0fb9b7a4))
+
 ## [1.0.51](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.50...messaging-v1.0.51) (2023-12-02)
 
 
