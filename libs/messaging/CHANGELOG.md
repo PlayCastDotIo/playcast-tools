@@ -1,3 +1,10 @@
+## [1.0.53](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.52...messaging-v1.0.53) (2023-12-11)
+
+
+### Bug Fixes
+
+* **player:** Add connected and disconnected messages ([93b3376](https://github.com/PlayCastDotIo/playcast-tools/commit/93b3376b357113f598d7db059d19856874506389))
+
 ## [1.0.52](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.51...messaging-v1.0.52) (2023-12-02)
 
 
