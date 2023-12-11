@@ -7,7 +7,9 @@ export type PlaycastPlayerInputAccess = {
 };
 
 export type PlaycastPlayerMessages =
-  | PlaycastMessagePlayerSetInputAccess;
+  | PlaycastMessagePlayerSetInputAccess
+  | PlaycastMessagePlayerSetConnected
+  | PlaycastMessagePlayerSetDisconnected;
 
 export type PlaycastMessagePlayerSetInputAccess = {
   target: 'player';
@@ -15,5 +17,23 @@ export type PlaycastMessagePlayerSetInputAccess = {
   isReply: false;
   message: {
     access: PlaycastPlayerInputAccess;
+  };
+};
+
+export type PlaycastMessagePlayerSetConnected = {
+  target: 'player';
+  action: 'setConnected';
+  isReply: false;
+  message: {
+    playerId: string;
+  };
+};
+
+export type PlaycastMessagePlayerSetDisconnected = {
+  target: 'player';
+  action: 'setDisconnected';
+  isReply: false;
+  message: {
+    playerId: string;
   };
 };
