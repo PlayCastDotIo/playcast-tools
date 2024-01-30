@@ -1,3 +1,10 @@
+## [1.0.55](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.54...messaging-v1.0.55) (2024-01-30)
+
+
+### Bug Fixes
+
+* **pointless:** Remove pointless type, but use a fix message ([e79b361](https://github.com/PlayCastDotIo/playcast-tools/commit/e79b36161aa288769718f13816a21b6b6aec7e71))
+
 ## [1.0.54](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.53...messaging-v1.0.54) (2024-01-30)
 
 
