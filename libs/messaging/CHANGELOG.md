@@ -1,3 +1,10 @@
+## [1.0.54](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.53...messaging-v1.0.54) (2024-01-30)
+
+
+### Bug Fixes
+
+* **pointless:** Added a pointless type to trigger a new build ([71fe7c9](https://github.com/PlayCastDotIo/playcast-tools/commit/71fe7c9d7849a1ac3972db8e317339dae327eb37))
+
 ## [1.0.53](https://github.com/PlayCastDotIo/playcast-tools/compare/messaging-v1.0.52...messaging-v1.0.53) (2023-12-11)
 
 
