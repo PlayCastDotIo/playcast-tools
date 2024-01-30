@@ -62,7 +62,3 @@ export type PlaycastMessageSystemSetDeviceChange = {
   isReply: false;
   message: PlaycastSystemDeviceChange;
 };
-
-export type PlaycastPointlessType = {
-  pointlessness: true;
-}
